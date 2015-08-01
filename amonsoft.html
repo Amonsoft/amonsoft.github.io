@@ -1,0 +1,79 @@
+<html>
+  <head>
+  <title>My Now Amazing Webpage</title>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <link href="http://www.anowave.com/factory/cdn/import.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.anowave.com/factory/cdn/styles/rainbow/themes/github.css" rel="stylesheet" type="text/css" />
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- /.CDN -->
+    <script type="text/javascript" src="js/jquery.anoslide.js"></script>
+    <style type="text/css">
+      .carousel { position:relative; min-height: 20px; height:auto !important; height: 20px;  background:url(images/loader.gif) center center no-repeat; }
+      .carousel .next,
+      .carousel .prev { display:none; width:56px; height:56px; position:absolute; bottom:20px; left:50%; margin-top:-28px; z-index:9999; cursor:pointer; }
+      .carousel .prev { margin-left:-60px; background:url(images/prev.png) 0 0 no-repeat;  }
+      .carousel .next { margin-right:-60px;  background:url(images/next.png) 0 0 no-repeat; }
+      .carousel li { display:none; }
+      .carousel li img { width:100%; height:auto; }
+      .paging { position:absolute; z-index:9998; }
+      .paging > a { display:block; cursor:pointer; width:40px; height:40px; float:left; background:url(images/dots.png) 0px -40px no-repeat; }
+      .paging > a:hover,
+      .paging > a.current { background:url(images/dots.png) 0px 0px no-repeat;  }
+      .badge { display:block; width:104px; height:104px; background:url(images/badge.png) 0 0 no-repeat; z-index:9000; position:absolute; top:-3px; left:-3px; }
+      img {
+-webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  -o-user-select: none;
+  user-select: none;    
+}
+      /* Figure */
+    </style>
+  </head>
+  <body>
+Hello World
+ <div class="wrapper">
+      <h2>1. Mixed content demo (One visible item)<em>Resize your browser to review responsive effect</em></h2>
+      <div class="carousel">
+        <a class="prev" data-prev-mixed></a>
+        <ul>
+          <li>
+            <figure><img data-src="images/slides/1.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+          <li>
+            <figure><img data-src="images/slides/2.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+          <li>
+            <figure><img data-src="images/slides/3.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+          <li>
+            <figure><img data-src="images/slides/4.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+          <li>
+            <figure><img data-src="images/slides/5.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+          <li>
+            <figure><img data-src="images/slides/6.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+          <li>
+            <figure><img data-src="images/slides/7.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+        </ul>
+        <a class="next" data-next-mixed></a>
+        <a class="badge"></a>
+      </div>
+    </div>
+    
+    <script type="text/javascript">
+      $('.carousel ul').anoSlide(
+      {
+        items: 1,
+        speed: 500,
+        prev: 'a.prev[data-prev-mixed]',
+        next: 'a.next[data-next-mixed]',
+        lazy: true
+      })
+    </script>
+  </body>
+</html>
