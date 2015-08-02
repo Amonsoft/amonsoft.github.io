@@ -53,9 +53,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+  <link rel="import" href="bower_components/paper-styles/demo-pages.html">
+  <link rel="import" href="bower_components/iron-form/iron-form.html">
+   
   <!-- endreplace-->
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-// Add the new slick-theme.css if you want the default styling
+
 <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 <script type="text/javascript" src="slick/slick.min.js"></script>
  <link href="http://www.anowave.com/factory/cdn/import.css" rel="stylesheet" type="text/css" />
@@ -148,19 +154,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                      <div class="carousel">
         <a class="prev" data-prev-mixed></a>
         <ul>
-          <li>
-            <figure><img data-src="images/samsung.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+           <li data-caption="<span style='color:#ffffff'>Samsung at Its Best </span>">
+            <figure><img data-src="images/slides/samsung.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
           </li>
-          <li>
+          <li data-caption="<span style='color:#ffffff'>HTC at Its Best </span>">
             <figure><img data-src="images/htx.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
           </li>
-          <li>
+           <li data-caption="<span style='color:#ffffff'>Apple at Its Best </span>">
             <figure><img data-src="images/iphone.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
           </li>
-          <li>
+           <li data-caption="<span style='color:#ffffff'>HTC  at Its Best </span>">
             <figure><img data-src="images/htxx.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
           </li>
-        
+       
         </ul>
         <a class="next" data-next-mixed></a>
         
@@ -168,24 +174,90 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </div>
     
     <script type="text/javascript">
-      $('.carousel ul').anoSlide(
+     /* $('.carousel ul').anoSlide(
       {
         items: 1,
         speed: 500,
         prev: 'a.prev[data-prev-mixed]',
         next: 'a.next[data-next-mixed]',
-        lazy: true
-      })
+        lazy: true,
+        auto:2000
+      }) */
+$('.carousel ul').anoSlide(
+{
+  items: 1,
+  speed: 500,
+  prev: 'a.prev[data-prev-caption]',
+  next: 'a.next[data-next-caption]',
+  lazy: true,
+   auto:2000,
+  onStart: function(ui)
+  {
+    /* Remove existing caption in slide */
+    ui.slide.element.find('.caption').remove();
+  },
+  onEnd: function(ui)
+  {
+    /* Get caption content */
+    var content = ui.slide.element.data('caption');
+    
+    /* Create a caption wrap element */
+    var caption = $('<div/>').addClass('caption').css(
+    {
+      position: 'absolute', 
+      background: 'rgb(0,0,0)',
+      color: 'rgb(255,255,255)',
+      textShadow: 'rgb(0,0,0) -1px -1px',
+      opacity: 0.5,
+      top: -100,
+      left: 50,
+      padding: 20,
+      webkitBorderRadius: 5,
+      mozBorderRadius: 5,
+      borderRadius: 5
+    }).html(content);
+    
+    /* Append caption to slide and animate it. Animation is really up to you. */
+    caption.appendTo(ui.slide.element).animate(
+    {
+      top:50
+    });
+  }
+})
     </script>
-  
+
               </paper-material>
+               <div>
+                <paper-material elevation="2">
+      <h4>method="get"</h4>
+      <div class="horizontal-section">
+        <form is="iron-form" id="formGet" method="get" action="/">
+          <paper-input name="name" label="Name" required></paper-input>
+          <paper-input name="animal" label="Favourite animal" required></paper-input>
+          <br>
+
+          <input type="checkbox" name="food" value="donuts" checked> I like donuts<br>
+          <input type="checkbox" name="food" value="pizza"> I like pizza<br>
+          <br>
+
+          <input type="radio" name="color" value="red" checked>Red<br>
+          <input type="radio" name="color" value="blue" checked>Blue<br>
+          <input type="radio" name="color" value="green">Green<br>
+
+          <br><br>
+
+          <paper-button raised
+              onclick="clickHandler(event)">Submit</paper-button>
+          <button type="submit">Native Submit</button>
+        </form>
+      </div>
+       </paper-material>
+    </div>
             </section>
 
-            <section data-route="users">
+            <section data-route="home">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">Users</h2>
-                <p>This is the users section</p>
-                <a href="/users/Rob">Rob</a></p>
+               
               </paper-material>
             </section>
 
