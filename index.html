@@ -58,14 +58,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="bower_components/paper-styles/paper-styles.html">
   <link rel="import" href="bower_components/paper-styles/demo-pages.html">
   <link rel="import" href="bower_components/iron-form/iron-form.html">
+   <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="../bower_components/paper-tab/paper-tab.html">
+      <link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
+        <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
    
   <!-- endreplace-->
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 
 <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 <script type="text/javascript" src="slick/slick.min.js"></script>
- <link href="http://www.anowave.com/factory/cdn/import.css" rel="stylesheet" type="text/css" />
-    <link href="http://www.anowave.com/factory/cdn/styles/rainbow/themes/github.css" rel="stylesheet" type="text/css" />
+
     <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- /.CDN -->
     <script type="text/javascript" src="js/jquery.anoslide.js"></script>
@@ -95,6 +98,261 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
       /* Figure */
     </style>
+     <style is="custom-style">
+      :root {
+        --paper-toolbar-background: #00bcd4;
+      }
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 24px;
+        color: #333;
+      }
+
+      paper-tabs, paper-toolbar {
+        background-color: #00bcd4;
+        color: #fff;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      paper-toolbar paper-tabs {
+        box-shadow: none;
+      }
+
+      paper-tabs[noink][no-bar] paper-tab.iron-selected {
+        color: #ffff8d;
+      }
+
+      paper-tabs[alignBottom] {
+        box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.15);
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 400;
+        padding-top: 20px;
+      }
+
+    </style>
+    
+  <style>
+
+    body {
+      background-color: #f9f9f9;
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+    }
+
+    section {
+      padding: 30px 25px;
+    }
+
+    section > * {
+      margin: 10px
+    }
+
+    /* Button */
+    .button {
+      display: inline-block;
+      position: relative;
+      width: 120px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 2px;
+      font-size: 0.9em;
+      background-color: #fff;
+      color: #646464;
+    }
+
+    .button > paper-ripple {
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .button.narrow {
+      width: 60px;
+    }
+
+    .button.grey {
+      background-color: #eee;
+    }
+
+    .button.blue {
+      background-color: #4285f4;
+      color: #fff;
+    }
+
+    .button.green {
+      background-color: #0f9d58;
+      color: #fff;
+    }
+
+    .button.raised {
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-delay: 0.2s;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    .button.raised:active {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      transition-delay: 0s;
+    }
+
+    /* Icon Button */
+    .icon-button {
+      position: relative;
+      display: inline-block;
+      width: 56px;
+      height: 56px;
+    }
+
+    .icon-button > iron-icon {
+      margin: 16px;
+      transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .icon-button:hover > iron-icon {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+
+    .icon-button > paper-ripple {
+      overflow: hidden;
+      color: #646464;
+    }
+
+    .icon-button.red > iron-icon::shadow path {
+      fill: #db4437;
+    }
+
+    .icon-button.red > paper-ripple {
+      color: #db4437;
+    }
+
+    .icon-button.blue > iron-icon::shadow path {
+      fill: #4285f4;
+    }
+
+    .icon-button.blue > paper-ripple {
+      color: #4285f4;
+    }
+
+    /* FAB */
+    .fab {
+      position: relative;
+      display: inline-block;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      color: #fff;
+      overflow: hidden;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-delay: 0.2s;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    .fab.red {
+      background-color: #d23f31;
+    }
+
+    .fab.blue {
+      background-color: #4285f4;
+    }
+
+    .fab.green {
+      background-color: #0f9d58;
+    }
+
+    .fab:active {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      transition-delay: 0s;
+    }
+
+    .fab > iron-icon {
+      margin: 16px;
+    }
+
+    .fab > iron-icon::shadow path {
+      fill: #fff;
+    }
+
+    /* Menu */
+    .menu {
+      display: inline-block;
+      width: 180px;
+      background-color: #fff;
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .item {
+      position: relative;
+      height: 48px;
+      line-height: 48px;
+      color: #646464;
+      font-size: 0.9em;
+    }
+
+    .menu.blue > .item {
+      color: #4285f4;
+    }
+
+    /* Card, Dialog */
+    .card, .dialog {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      vertical-align: top;
+      background-color: #fff;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .dialog {
+      box-sizing: border-box;
+      padding: 16px;
+    }
+
+    .dialog > .content {
+      height: 170px;
+      font-size: 0.9em;
+    }
+
+    .dialog > .content > .title {
+      font-size: 1.3em;
+    }
+
+    .dialog > .button {
+      width: 90px;
+      float: right;
+    }
+
+    .card.image {
+      background: url(http://lorempixel.com/300/240/nature/);
+      color: #fff;
+    }
+
+    /* Misc */
+    .center {
+      text-align: center;
+    }
+
+    .label {
+      padding: 0 16px;
+    }
+
+    .label-blue {
+      color: #4285f4;
+    }
+
+    .label-red {
+      color: #d23f31;
+    }
+
+  </style>
+    
 </head>
 
 <body unresolved class="fullbleed layout vertical">
@@ -127,12 +385,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </a>
           </paper-menu>
       </div>
-      <paper-header-panel main mode="waterfall-tall">
+      <paper-header-panel main mode="small">
         <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar">
+       <paper-toolbar id="mainToolbar">
           <button tabindex="1" id="paperToggle" paper-drawer-toggle>
             <iron-icon icon="menu" paper-drawer-toggle></iron-icon>
           </button>
+                          <p>Amonsoft</p>
           <span class="flex"></span>
 
           <!-- Toolbar icons -->
@@ -140,12 +399,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-icon-button icon="search"></paper-icon-button>
           <div class="middle"></div>
 
-          <!-- Application name -->
-          <div class="appname bottom paper-font-display2">Amonsoft Mobile Company</div>
-
+          <!-- Application name 
+          <div class="appname bottom paper-font-display2">Amonsoft Company</div -->
+ 
         </paper-toolbar>
+          
+ <!-- <h2>Current Tab: <span>[[selected]]</span></h2>  style="
+    background-color: #3F51B5;
+"-->
+      <paper-tabs selected="{{route}}">
 
-        <!-- Main Content -->
+        <paper-tab>Home</paper-tab>
+        <paper-tab>SmartPhones</paper-tab>
+        <paper-tab>Mobile Dev</paper-tab>
+        <paper-tab>Web Dev</paper-tab>
+        <paper-tab>Dev-Tools</paper-tab>
+        <paper-tab>Open Source</paper-tab>
+        <paper-tab>About Us</paper-tab>
+
+      </paper-tabs>
+
+
+        <!-- Main Content --
           <iron-pages attr-for-selected="data-route" selected="home">
 
             <section data-route="home">
@@ -253,7 +528,7 @@ $('.carousel ul').anoSlide(
       </div> 
      
        </paper-material>
-    </div>  -->
+    </div>  --
             </section>
 
             <section data-route="contact">
@@ -267,7 +542,307 @@ $('.carousel ul').anoSlide(
  <div class="wrapper">
      
      
+          </iron-pages>  -->
+
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+               <section data-route="1">
+              <paper-material elevation="1">
+                  <h2>IPhone</h2>
+                  </br>Description : </br>
+                  <img src="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+                  <paper-icon-button icon="arrow-forward">Next</paper-icon-button>
+              <div class="your-class">
+    <div>your content</div>
+    <div>your content</div>
+    <div>your content</div>
+  </div>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+ 
+              </paper-material>
+                    <paper-material elevation="1">
+             <h2>IPhone</h2>
+                  </br>Welcome to the Iphone  </br>
+                  <img src="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+                  <paper-icon-button icon="arrow-forward"> <paper-ripple>Servers Used</paper-ripple></paper-icon-button>
+              </paper-material>
+                    </paper-material>
+                    <paper-material elevation="1">
+                 <h2>IPhone</h2>
+                  </br>Welcome to the Iphone  </br>
+                  <img src="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+                  <paper-icon-button icon="arrow-forward">Next</paper-icon-button>
+              </paper-material>
+               </paper-material>
+                    <paper-material elevation="1">
+                 <h2>IPhone</h2>
+                  </br>Welcome to the Iphone  </br>
+                  <img src="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+                  <paper-icon-button icon="arrow-forward">Next</paper-icon-button>
+              </paper-material>
+           </paper-material>
+                    <paper-material elevation="1">
+                 <h2>Title:</h2><h3>IPhone</h3>
+                  </br>Welcome to the Iphone  </br>
+                  <img src="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+                  <paper-icon-button icon="arrow-forward">Next</paper-icon-button>
+              </paper-material>
+            </section>
+      
+      
+              <section data-route="2">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">This is Page One</h2>
+                  <paper-icon-button icon="next"></paper-icon-button>
+              </paper-material>
+            </section>
+      
+      
+              <section data-route="0">
+              <paper-material elevation="1">
+                  <div class="carousel">
+        <a class="prev" data-prev-mixed></a>
+        <ul>
+           <li data-caption="<span style='color:#ffffff'>Samsung at Its Best </span>">
+            <figure><img data-src="images/slides/samsung.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+          <li data-caption="<span style='color:#ffffff'>HTC at Its Best </span>">
+            <figure><img data-src="images/htx.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+           <li data-caption="<span style='color:#ffffff'>Apple at Its Best </span>">
+            <figure><img data-src="images/iphone.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+           <li data-caption="<span style='color:#ffffff'>HTC  at Its Best </span>">
+            <figure><img data-src="images/htxx.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+          </li>
+       
+        </ul>
+        <a class="next" data-next-mixed></a>
+        
+      </div>
+                   
+    <script type="text/javascript">
+     /* $('.carousel ul').anoSlide(
+      {
+        items: 1,
+        speed: 500,
+        prev: 'a.prev[data-prev-mixed]',
+        next: 'a.next[data-next-mixed]',
+        lazy: true,
+        auto:2000
+      }) */
+$('.carousel ul').anoSlide(
+{
+  items: 1,
+  speed: 500,
+  prev: 'a.prev[data-prev-caption]',
+  next: 'a.next[data-next-caption]',
+  lazy: true,
+   auto:2000,
+  onStart: function(ui)
+  {
+    /* Remove existing caption in slide */
+    ui.slide.element.find('.caption').remove();
+  },
+  onEnd: function(ui)
+  {
+    /* Get caption content */
+    var content = ui.slide.element.data('caption');
+    
+    /* Create a caption wrap element */
+    var caption = $('<div/>').addClass('caption').css(
+    {
+      position: 'absolute', 
+      background: 'rgb(0,0,0)',
+      color: 'rgb(255,255,255)',
+      textShadow: 'rgb(0,0,0) -1px -1px',
+      opacity: 0.5,
+      top: -100,
+      left: 50,
+      padding: 20,
+      webkitBorderRadius: 5,
+      mozBorderRadius: 5,
+      borderRadius: 5
+    }).html(content);
+    
+    /* Append caption to slide and animate it. Animation is really up to you. */
+    caption.appendTo(ui.slide.element).animate(
+    {
+      top:50
+    });
+  }
+})
+    </script>
+              </paper-material>
+            </section>
+      
+      
+               <section data-route="3">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">This is Page Three</h2>
+              </paper-material>
+            </section>
+      
+      
+               <section data-route="4">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">This is Page Four</h2>
+              </paper-material>
+            </section>
+      
+               <section data-route="5">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">Tools Used at Amonsoft</h2>
+                  At  Amonsoft we power our technology and products using some of the high class product on market. <br>We as a mobile development company, try as much as possible to utilize differnt tools to achieve efficency , Productivity, fluidity and comfort when working to ensure of products work on as many platforms as possible and reach as many people as possible. </br> We provide this comprehensive list of how we operate and the differnt tools we use to showcase what a small company can use and utilize to create high class top notch products.
+                  <ul>
+                  <li>Servers</li>
+                      <li>Text-Editors</li>
+                      <li>Web Frame-Works</li>
+                      <li>Compilers</li>
+                      <li>Web Browsers</li>
+                      <li>Andriod Tools</li>
+                      <li>Databses</li>
+                      <li>Analytics Tools</li>
+                      <li>Programming Languages</li>
+                      <li>Image Editors and Analyzers</li>
+                      <li>git Tools</li>
+                      <li>FTP tools</li>
+                
+                      
+                      
+                  </ul>
+              </paper-material>
+                   <paper-material elevation="1">
+                 <h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised blue ">
+      <div class="center" fit>Servers</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+                       We use many Servers at Amonsoft to run and test our products in House, and one of our major key factors when selecting a server ;
+                       <li>Type of project we are undertaking</li>
+                       <li>Speed of the server </li>
+                       <li>Ease in execution of the compiled code to the broswer</li>
+                       <li>Disk space it occupies on the computers</li>
+                       <li>Programming language we are using for the project</li>
+                       </br>
+                       *These are not in order of priority
+                   </br> 
+      </br>
+                    <li style="
+    text-decoration: underline;
+">Bracket(IDE)inbuilt WebServer</li>
+</br> This is used when runnimg Web based projects without any server side code yet, as when we are in design phase. 
+This helps us to execute to the browsers faster and make changes in real time without fireing up the browser.
+ The only problem is that , it only launches in Google Chrome, but hope for more support or customisation from the team at bracket, Adobe Systems
+</br></br>
+                    <li style="
+    text-decoration: underline;
+">Xampp Server</li>
+</br> We use Xampp to run full web applications , Exploiting its power to combine the UI pages , Scripts and databases. When a project is predominatly using Php scripts, its easy to setup since php compilers are inbuilt in xampp. We also use the PhpMyadmin database to interact with databases , using the CRUD methods , making the application come alive.
+</br></br>
+                     <li style="
+    text-decoration: underline;
+">Node js Server</li>
+</br>
+We started using Node ealier in 2015, when we wanted to test building of a product with a light weight server, and one whose language was so similar to the javascript we used in websites. Node helped us achieve that, wrinting servers in Javasrcipt and manipulating them . Node also gives us the opportunity to monitor our server behaviour, how its responding to requests, how many request are being recieved.
+                     
+                  
+              </paper-material>
+                   
+                    </paper-material>
+                   <paper-material elevation="1">
+               <h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised green ">
+      <div class="center" fit >Text Editors</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>We use many Text Editors at Amonsoft still dependant on the project and sometimes preference to an Engineer. </n>
+                 We take time to carefully select whic is suitable based on a number of factors;
+<li>The autocomplete feature is a very big plus for its adoption</li>
+<li>Language detection is key</li>
+<li>Colour theme and styling (Dark/Dracula prefence is high as noticed)</li>
+<li>Inbuilt server presence</li>
+<li>Presence of tabs as well</li>
+                       </br>
+We predominantly use the folllowing ;
+</br>
+<li>Bracket from Adobe Systems</li>
+<li>Atom from the Github</li>
+<li>Code Editor from Microsoft</li>
+<li>Notepad++ </li>
+<li>Chrome Devlopment Tools Editor</li>
+<li>Sublime Text Editor</li>
+<li>NotePad from Microsoft</li>
+</br> </br>
+*These are not in order of priority
+              </paper-material>
+  <div class="fab red">
+      <iron-icon icon="add"></iron-icon>
+      <paper-ripple class="circle" recenters></paper-ripple>
+    </div>
+ <!--
+                   <paper-material elevation="1">
+            <h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised green " style=" width: 183px;">
+      <div class="center" >WebFrameworks</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+              </paper-material>
+
+                   <paper-material elevation="1">
+            <h2 class="paper-font-display2" style="font-size: 30px;">   
+             <div class="center" >  <div class="button raised ">
+      <div class="center" fit>Compilers</div>
+      <paper-ripple></paper-ripple>
+                 </div></div></h2>
+              </paper-material>
+
+                   <paper-material elevation="1">
+               <h2 class="paper-font-display2" style="font-size: 30px;">   
+             <div class="center" >  <div class="button raised  ">
+      <div class="center" fit>WebBrowsers</div>
+      <paper-ripple></paper-ripple>
+                 </div></div></h2>
+ </paper-material>
+
+
+                   <paper-material elevation="1">
+                <h2 class="paper-font-display2">Andriod Tools</h2>
+              </paper-material>
+ 
+                   <paper-material elevation="1">
+                <h2 class="paper-font-display2">Ananyltics Tools</h2>
+              </paper-material>
+
+                   <paper-material elevation="1">
+                <h2 class="paper-font-display2">Programming Languages</h2>
+              </paper-material>
+
+                   <paper-material elevation="1">
+                <h2 class="paper-font-display2">Image Editors</h2>
+              </paper-material>
+      <paper-material elevation="1">
+                <h2 class="paper-font-display2">Image Editors</h2>
+              </paper-material>
+      <paper-material elevation="1">
+                <h2 class="paper-font-display2">FTP tools</h2>
+              </paper-material>
+  -->
+
+            </section>
+      
+               <section data-route="6">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">This is Page Six</h2>
+              </paper-material>
+            </section>
+              
+          
           </iron-pages>
+        
           </paper-header-panel>
     </paper-drawer-panel>
 
