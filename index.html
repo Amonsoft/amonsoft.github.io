@@ -422,6 +422,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-tab>About Us</paper-tab>
 
       </paper-tabs>
+          
 
 
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
@@ -859,9 +860,9 @@ We predominantly use the folllowing ;
   <br></br>                     Amonsoft Application X #4
                          <img data-src="images/slides/samsung.jpg" src="images/iphone.jpg" style="height:95%; width:95%" />
   <br></br>                     Amonsoft Project VR X #5
-                         <img data-src="images/slides/samsung.jpg" src="images/iphone.jpg" style="height:95%; width:95%" />
+                         <img data-src="images/slides/samsung.jpg" src="images/vrbox.jpg" style="height:95%; width:95%" />
   <br></br>                     Amonsoft OpenSource Cloud Project #6
-                         <img data-src="images/slides/samsung.jpg" src="images/iphone.jpg" style="height:95%; width:95%" />
+                         <img data-src="images/slides/samsung.jpg" src="images/opencloud2.jpg" style="height:95%; width:95%" />
 
               </paper-material>
             </section>
@@ -887,18 +888,19 @@ We predominantly use the folllowing ;
     </platinum-sw-register>
 
   </template>
-
+    <script>
+  document.addEventListener('WebComponentsReady', function () {
+    var template = document.querySelector('template[is="dom-bind"]');
+    template.selected = 0; // selected is an index by default
+  });
+</script>
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+      
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('.your-class').slick({
-        setting-name: setting-value
-      });
-    });
-  </script>
+
+
   <!-- endbuild-->
 </body>
 
