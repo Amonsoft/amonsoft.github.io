@@ -445,7 +445,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h4>Personal Details</h4>
       <div class="horizontal-section" style="
     width: 40%;
-">
+"><p id="thankyou" > </p>
         <form is="iron-form" id="formGet" method="get" action="/">
           <paper-input name="name" label="Name" required></paper-input>
             <paper-input name="email" label="Email" required></paper-input>
@@ -496,13 +496,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         
       output.innerHTML = JSON.stringify(event.detail);
         
-        document.getElementById("formGet").style.visibility = "hidden";
+        //document.getElementById("formGet").style.visibility = "hidden";
         
         
     }
 
     function clickHandler(event) {
       Polymer.dom(event).localTarget.parentElement.submit();
+           document.getElementById("formGet").style.visibility = "hidden";
+           document.getElementById("thankyou").innerHTML = "<strong>Thank You for your Application for your Contract smartPhone. An Email will be sent to you shortly for Follow up </strong>";
+          var output = document.getElementById('output');
+        
+      output.innerHTML = JSON.stringify(event.detail);
+        
     }
   </script>
                   
@@ -789,8 +795,53 @@ We predominantly use the folllowing ;
                  <h4 class="paper-font-display2">Managment Team</h4>
                         Top Team #1
                               <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
-                        <br></br>Business Development Team #2
-                         <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
+                  </br>
+                   <h2 style="
+    color: #00BCD4;
+    text-decoration: underline;
+">Engineers</h2><br></br>
+                   <Strong>Amon.N. ,BSc. Software Engineering(MUK)</Strong>
+                   <img  src="images/samsung.jpg" style="/* height: 24%; */ width: 32%;margin-right: 61px;/* margin-bottom: 71px; */display: block;float: right;margin-top: -9px;" />
+                   <li> Scripting</li>
+                   <li> Logic Development</li>
+                   <li> Database Management</li>
+                   <li>New Technologies</li>
+                   </br><br></br>
+<Strong>Marios .T. , BSc. Software Engineering(MUK)</Strong>
+<img  src="images/samsung.jpg" style="/* height: 24%; */ width: 32%;margin-right: 61px;/* margin-bottom: 71px; */display: block;float: right;margin-top: -9px;" />
+                   <li> Server Engineering</li>
+                   <li> Architecture Development</li>
+                   <li> API Development</li>
+                   <li>Partial stack Development</li>
+                  </br><br></br>
+<Strong> Timothy .S., BSc. Information Technology(MUK)</Strong>
+<img  src="images/samsung.jpg" style="/* height: 24%; */ width: 32%;margin-right: 61px;/* margin-bottom: 71px; */display: block;float: right;margin-top: -9px;" />
+                   <li> UI/UX Engineering</li>
+                   <li> Design R&amp;D</li>
+                   <li> Research and Development</li>
+                   <li>Application Networking </li>
+
+                   
+                        <br></br><br></br>
+       <h2 style="  text-decoration: underline;
+    color: #00BCD4;
+">Business Team</h2>
+                   <Strong>Daniel.M. </br>,BSc.Commerce(MUK)</Strong>
+<img  src="images/samsung.jpg" style="/* height: 24%; */ width: 32%;margin-right: 61px;/* margin-bottom: 71px; */display: block;float: right;margin-top: -9px;" />
+                   <li> Business Relations Development</li>
+                   <li> Marketing Manager</li>
+                   <li> Sales Manager</li>
+                   
+                   </br><br></br>
+<Strong>Davis.B.M.</br>, BSc. Commerce(MUBS)</Strong>
+<img  src="images/samsung.jpg" style="/* height: 24%; */ width: 32%;margin-right: 61px;/* margin-bottom: 71px; */display: block;float: right;margin-top: -9px;" />
+                   <li> Business Model Development</li>
+                   <li> Financial Manager</li>
+                   <li> Projects Planning</li>
+                   <li>Partnerships Managment</li>
+                   <li> Business Research t</li>
+                  </br><br></br>
+
                   
               </paper-material>
                     <paper-material elevation="1" style="
@@ -798,13 +849,19 @@ We predominantly use the folllowing ;
     float: right;
     width: 45%;
 ">
-                <h4 class="paper-font-display2">Production Team</h4>
-                        Engineering Team #1
-                              <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
-                        <br></br>Designing Team #2
-                         <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
-  <br></br>                     Amonsoft Team 3#
-                         <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
+                <h4 class="paper-font-display2">Projects</h4>
+                        Fitness Application Project #1
+                              <img data-src="" src="images/proj.jpg" style="height:95%; width:95%" />
+                        <br></br>Innovex.org Site #2
+                         <img data-src="images/slides/samsung.jpg" src="images/proj2.jpg" style="height:95%; width:95%" />
+  <br></br>                     Amonsoft Polymer Website #3
+                         <img data-src="images/slides/samsung.jpg" src="images/proj3.jpg" style="height:95%; width:95%" />
+  <br></br>                     Amonsoft Application X #4
+                         <img data-src="images/slides/samsung.jpg" src="images/iphone.jpg" style="height:95%; width:95%" />
+  <br></br>                     Amonsoft Project VR X #5
+                         <img data-src="images/slides/samsung.jpg" src="images/iphone.jpg" style="height:95%; width:95%" />
+  <br></br>                     Amonsoft OpenSource Cloud Project #6
+                         <img data-src="images/slides/samsung.jpg" src="images/iphone.jpg" style="height:95%; width:95%" />
 
               </paper-material>
             </section>
