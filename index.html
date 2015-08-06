@@ -62,6 +62,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="../bower_components/paper-tab/paper-tab.html">
       <link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
         <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+      <link rel="import" href="../bower_components/iron-form/iron-form.html">
    
   <!-- endreplace-->
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
@@ -368,6 +369,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
           <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}">
+              <!--
               <a data-route="home" href="/">
                 <iron-icon icon="home"></iron-icon>
                 <span>Home</span>
@@ -382,7 +384,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <a data-route="contact" href="/contact">
                 <iron-icon icon="mail"></iron-icon>
                 <span>Contact</span>
-              </a>
+              </a> 
+          
+          -->
           </paper-menu>
       </div>
       <paper-header-panel main mode="small">
@@ -391,7 +395,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <button tabindex="1" id="paperToggle" paper-drawer-toggle>
             <iron-icon icon="menu" paper-drawer-toggle></iron-icon>
           </button>
-                          <p>Amonsoft</p>
+                          <h1><p>Amonsoft</p></h1>
           <span class="flex"></span>
 
           <!-- Toolbar icons -->
@@ -412,8 +416,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-tab>Home</paper-tab>
         <paper-tab>SmartPhones</paper-tab>
         <paper-tab>Mobile Dev</paper-tab>
-        <paper-tab>Web Dev</paper-tab>
-        <paper-tab>Dev-Tools</paper-tab>
+     <!--   <paper-tab>Web Dev</paper-tab>
+        <paper-tab>Dev-Tools</paper-tab> -->
         <paper-tab>Open Source</paper-tab>
         <paper-tab>About Us</paper-tab>
 
@@ -422,26 +426,195 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
-               <section data-route="1">
+               <section data-route="1" >
               <paper-material elevation="1">
-                  <h2>SmartPhone Page is Under Construction</h2>
+                  
+                  <img  data-src="images/slides/samsung.jpg" src="images/iphone.jpg" style="
+    height: 300px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 7%;
+"> <img  data-src="images/slides/samsung.jpg" src="images/htxx.jpg" style="
+    height: 300px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 10%;
+"> 
+                  <h2>Apply For your SmartPhone Today </h2>
+                      <div>
+      <h4>Personal Details</h4>
+      <div class="horizontal-section" style="
+    width: 40%;
+">
+        <form is="iron-form" id="formGet" method="get" action="/">
+          <paper-input name="name" label="Name" required></paper-input>
+            <paper-input name="email" label="Email" required></paper-input>
+            <paper-input name="contact" label="Contact" required></paper-input>
+            <paper-input name="country" label="Country" required></paper-input>
+            <paper-input name="nationality" label="Nationality" required></paper-input>
+            <paper-input name="age" label="Age" required></paper-input>
+            <paper-input name="occupation" label="Ocupation" required></paper-input>
+            <paper-input name="work_Address" label="Work Address" required></paper-input>
+            <paper-input name="home_address" label="Home Address" required></paper-input>
+        <paper-input name="other_address" label="Other Address" required></paper-input>
+             
+         
+          <br>
+<!--
+          <input type="checkbox" name="food" value="donuts" checked> I like donuts<br>
+          <input type="checkbox" name="food" value="pizza"> I like pizza<br>
+-->
+          <br>
+
+          <input type="radio" name="platform" value="android" checked>Android<br>
+          <input type="radio" name="platform" value="ios" checked>iOS<br>
+          <input type="radio" name="platform" value="blackberry">Blackberry<br>
+             <input type="radio" name="platform" value="Windows" checked>Windows<br>
+          <input type="radio" name="platform" value="linux" checked>Linux<br>
+          <input type="radio" name="platform" value="Firefox">Firefox<br>
+
+          <br><br>
+
+          <paper-button raised
+              onclick="clickHandler(event)">Submit</paper-button>
+         <!-- <button type="submit">Native Submit</button> -->
+        </form>
+      </div>
+    </div>
+                   <div>
+      <h4>Submitted form data</h4>
+      <div class="horizontal-section wide">
+        <div id="output"></div>
+      </div>
+    </div>
+                   <script>
+    document.getElementById('formGet').addEventListener('iron-form-submit', display);
+    document.getElementById('formPost').addEventListener('iron-form-submit', display);
+
+    function display(event) {
+      var output = document.getElementById('output');
+        
+      output.innerHTML = JSON.stringify(event.detail);
+        
+       var formget = document.getElementById('formGet');
+        
+        
+    }
+
+    function clickHandler(event) {
+      Polymer.dom(event).localTarget.parentElement.submit();
+    }
+  </script>
+                  
                    </paper-material>
             </section>
-      
-      
+              
               <section data-route="2">
               <paper-material elevation="1">
-                <h2 class="paper-font-display2">Mobile Dev page is under construction</h2>
-                  <paper-icon-button icon="next"></paper-icon-button>
+                
+                   <h2 class="paper-font-display2" style="font-size: 25px; width:200px">   
+               <div class="button raised blue " style=" width:220px">
+      <div class="center" fit >Mobile Development</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+                  At Amonsoft we very much believe at mobile first technology , and in that way we are taking this very serious by contributing to mobile devlopment and distribution.  We as Engineers are studying the way mobile technology apps and technology are built , and we are engaging fresh minds to help us create and develop new perspectives.</br></br>
+                       <li>Mobile OS development</li>
+                       <li>Android App development </li>
+                       <li>iOS deveopment</li>
+                       <li>Windows App development</li>
+                       <li>Mobile Hardware Devlopment</li>
+                       <li>VIrtual Reality Development</li>                  
+                       </br>
+                       *These are not in order of priority
+                   </br> 
+      </br>
+                  <h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised green " style="
+      width: 220px;">
+      <div class="center" fit style="
+     text-decoration: underline; width: 220px;
+">Android Development</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+</br> Andriod is at an interesting point in history,where over One billion people carry it and use it daily. It collects mind bubbling data. We here look at it as a way to reach more people, get services more out there . </br></br> <li>We are looking at building both tools to help in the development of andriod applications </li> 
+<li>We are also looking at building more consumer products on the platform .</li>
+<li>We are working to contribute to the OS development , looking at its open source nature thanks to Google Inc.</li>
+</br></br>
+
+<h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised green " style="
+      width: 220px;">
+      <div class="center" fit style="
+     text-decoration: underline; width: 220px;
+">iOS Development</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+</br>iOS development has been pinnacle in our current mobile ecosystem , making the most money for developers and having a large base for a single deveice Iphone , that doesnt have the issue of screen Fragmentation. </br> </br>
+But due to its closed Source structure, we are unable to contribute to its open source nature, but instead we are building applications
+</br></br>
+
+<h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised green " style="
+      width: 300px;">
+      <div class="center" fit style="
+     text-decoration: underline; width: 290px;
+" >Windows Development</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+</br></br>
+                     
+<h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised green " style="
+      width: 220px;">
+      <div class="center" fit style="
+     text-decoration: underline; width: 220px;
+">Mobile Hardware</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+</br></br>
+<h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised red " style="
+      width: 220px;">
+      <div class="center" fit style="
+     text-decoration: underline; width: 220px; background-color: red;
+     color: white;
+">Virtual Reality</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+
+                  <paper-icon-button icon="forward"></paper-icon-button>
               </paper-material>
+
             </section>
       
       
               <section data-route="0">
               <paper-material elevation="1">
+                   <h2 class="paper-font-display2" style="font-size: 25px;">   
+               <div class="button raised blue " >
+      <div class="center" fit style="
+    background-color: #00BCD4;
+">Apply</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
+                  <h2 class="paper-font-display2" style="font-size: 25px;"> 
+                      <a  target="_blank" class="inherit" href="amonsoft.html">
+    <paper-icon-button icon="polymer" title="polymer"></paper-icon-button>
+</a>
+               <div class="button raised blue " style="
+    float: right;
+    margin-top: -5%;
+    right: 4%;
+">
+      <div class="center" fit style="
+    background-color: #00BCD4;
+">Order</div>
+      <paper-ripple></paper-ripple>
+                 </div></h2>
                   <div class="carousel">
         <a class="prev" data-prev-mixed></a>
         <ul>
+           
            <li data-caption="<span style='color:#ffffff'>Samsung at Its Best </span>">
             <figure><img data-src="images/slides/samsung.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
           </li>
@@ -453,6 +626,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </li>
            <li data-caption="<span style='color:#ffffff'>HTC  at Its Best </span>">
             <figure><img data-src="images/htxx.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+               
           </li>
        
         </ul>
@@ -517,19 +691,6 @@ $('.carousel ul').anoSlide(
       
       
                <section data-route="3">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">Web Dev page is under construction</h2>
-              </paper-material>
-            </section>
-      
-      
-               <section data-route="4">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">Dev Tools page is under construction</h2>
-              </paper-material>
-            </section>
-      
-               <section data-route="5">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Tools Used at Amonsoft</h2>
                   At  Amonsoft we power our technology and products using some of the high class product on market. <br>We as a mobile development company, try as much as possible to utilize differnt tools to achieve efficency , Productivity, fluidity and comfort when working to ensure of products work on as many platforms as possible and reach as many people as possible. </br> We provide this comprehensive list of how we operate and the differnt tools we use to showcase what a small company can use and utilize to create high class top notch products.
@@ -621,9 +782,33 @@ We predominantly use the folllowing ;
  
             </section>
       
-               <section data-route="6">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">About us Page is under constrcution</h2>
+               <section data-route="4">
+              <paper-material elevation="1" style="
+    /* display: table-caption; */
+    display: block;
+    width: 45%;
+    float: left;
+">
+                 <h4 class="paper-font-display2">Managment Team</h4>
+                        Top Team #1
+                              <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
+                        <br></br>Business Development Team #2
+                         <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
+                  
+              </paper-material>
+                    <paper-material elevation="1" style="
+    display: block;
+    float: right;
+    width: 45%;
+">
+                <h4 class="paper-font-display2">Production Team</h4>
+                        Engineering Team #1
+                              <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
+                        <br></br>Designing Team #2
+                         <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
+  <br></br>                     Amonsoft Team 3#
+                         <img data-src="images/slides/samsung.jpg" src="images/slides/samsung.jpg " style="height:95%; width:95%" />
+
               </paper-material>
             </section>
               

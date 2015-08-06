@@ -1,15 +1,84 @@
-<html>
-  <head>
-  <title>My Now Amazing Webpage</title>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1 initial-scale=1, user-calable=yes">
+ 
+  <meta name="generator" content="Polymer Starter Kit" />
+  <title>Amonsoft</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#303F9F">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Chrome for Android Theme color -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Polymer Starter Kit">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+  <link rel="import" href="bower_components/paper-styles/demo-pages.html">
+  <link rel="import" href="bower_components/iron-form/iron-form.html">
+   <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="../bower_components/paper-tab/paper-tab.html">
+      <link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
+        <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+      <link rel="import" href="../bower_components/iron-form/iron-form.html">
+   
+  <!-- endreplace-->
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-  <link href="http://www.anowave.com/factory/cdn/import.css" rel="stylesheet" type="text/css" />
-    <link href="http://www.anowave.com/factory/cdn/styles/rainbow/themes/github.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
     <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- /.CDN -->
     <script type="text/javascript" src="js/jquery.anoslide.js"></script>
     <style type="text/css">
-      .carousel { position:relative; min-height: 20px; height:auto !important; height: 20px;  background:url(images/loader.gif) center center no-repeat; }
+      .carousel { position:relative; 
+        min-height: 20px; 
+        height:auto !important; 
+        height: 20px;  
+        background:url(images/loader.gif) center center no-repeat; }
       .carousel .next,
       .carousel .prev { display:none; width:56px; height:56px; position:absolute; bottom:20px; left:50%; margin-top:-28px; z-index:9999; cursor:pointer; }
       .carousel .prev { margin-left:-60px; background:url(images/prev.png) 0 0 no-repeat;  }
@@ -30,8 +99,411 @@
 }
       /* Figure */
     </style>
-  </head>
-  <body>
+     <style is="custom-style">
+      :root {
+        --paper-toolbar-background: #00bcd4;
+      }
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 24px;
+        color: #333;
+      }
+
+      paper-tabs, paper-toolbar {
+        background-color: #00bcd4;
+        color: #fff;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      paper-toolbar paper-tabs {
+        box-shadow: none;
+      }
+
+      paper-tabs[noink][no-bar] paper-tab.iron-selected {
+        color: #ffff8d;
+      }
+
+      paper-tabs[alignBottom] {
+        box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.15);
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 400;
+        padding-top: 20px;
+      }
+
+    </style>
+    
+  <style>
+
+    body {
+      background-color: #f9f9f9;
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+    }
+
+    section {
+      padding: 30px 25px;
+    }
+
+    section > * {
+      margin: 10px
+    }
+
+    /* Button */
+    .button {
+      display: inline-block;
+      position: relative;
+      width: 120px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 2px;
+      font-size: 0.9em;
+      background-color: #fff;
+      color: #646464;
+    }
+
+    .button > paper-ripple {
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .button.narrow {
+      width: 60px;
+    }
+
+    .button.grey {
+      background-color: #eee;
+    }
+
+    .button.blue {
+      background-color: #4285f4;
+      color: #fff;
+    }
+
+    .button.green {
+      background-color: #0f9d58;
+      color: #fff;
+    }
+
+    .button.raised {
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-delay: 0.2s;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    .button.raised:active {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      transition-delay: 0s;
+    }
+
+    /* Icon Button */
+    .icon-button {
+      position: relative;
+      display: inline-block;
+      width: 56px;
+      height: 56px;
+    }
+
+    .icon-button > iron-icon {
+      margin: 16px;
+      transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .icon-button:hover > iron-icon {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+
+    .icon-button > paper-ripple {
+      overflow: hidden;
+      color: #646464;
+    }
+
+    .icon-button.red > iron-icon::shadow path {
+      fill: #db4437;
+    }
+
+    .icon-button.red > paper-ripple {
+      color: #db4437;
+    }
+
+    .icon-button.blue > iron-icon::shadow path {
+      fill: #4285f4;
+    }
+
+    .icon-button.blue > paper-ripple {
+      color: #4285f4;
+    }
+
+    /* FAB */
+    .fab {
+      position: relative;
+      display: inline-block;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      color: #fff;
+      overflow: hidden;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-delay: 0.2s;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    .fab.red {
+      background-color: #d23f31;
+    }
+
+    .fab.blue {
+      background-color: #4285f4;
+    }
+
+    .fab.green {
+      background-color: #0f9d58;
+    }
+
+    .fab:active {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      transition-delay: 0s;
+    }
+
+    .fab > iron-icon {
+      margin: 16px;
+    }
+
+    .fab > iron-icon::shadow path {
+      fill: #fff;
+    }
+
+    /* Menu */
+    .menu {
+      display: inline-block;
+      width: 180px;
+      background-color: #fff;
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .item {
+      position: relative;
+      height: 48px;
+      line-height: 48px;
+      color: #646464;
+      font-size: 0.9em;
+    }
+
+    .menu.blue > .item {
+      color: #4285f4;
+    }
+
+    /* Card, Dialog */
+    .card, .dialog {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 240px;
+      vertical-align: top;
+      background-color: #fff;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .dialog {
+      box-sizing: border-box;
+      padding: 16px;
+    }
+
+    .dialog > .content {
+      height: 170px;
+      font-size: 0.9em;
+    }
+
+    .dialog > .content > .title {
+      font-size: 1.3em;
+    }
+
+    .dialog > .button {
+      width: 90px;
+      float: right;
+    }
+
+    .card.image {
+      background: url(http://lorempixel.com/300/240/nature/);
+      color: #fff;
+    }
+
+    /* Misc */
+    .center {
+      text-align: center;
+    }
+
+    .label {
+      padding: 0 16px;
+    }
+
+    .label-blue {
+      color: #4285f4;
+    }
+
+    .label-red {
+      color: #d23f31;
+    }
+
+  </style>
+    
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel" forceNarrow>
+      <div drawer>
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span>Menu</span>
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+          <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}">
+              <!--
+              <a data-route="home" href="/">
+                <iron-icon icon="home"></iron-icon>
+                <span>Home</span>
+              </a>
+
+              <a data-route="amon" href="/">
+                <iron-icon icon="home"></iron-icon>
+                <span>SmartPhones</span>
+              </a>
+            
+
+              <a data-route="contact" href="/contact">
+                <iron-icon icon="mail"></iron-icon>
+                <span>Contact</span>
+              </a> 
+          
+          -->
+          </paper-menu>
+      </div>
+      <paper-header-panel main mode="small">
+        <!-- Main Toolbar -->
+       <paper-toolbar id="mainToolbar">
+          <button tabindex="1" id="paperToggle" paper-drawer-toggle>
+            <iron-icon icon="menu" paper-drawer-toggle></iron-icon>
+          </button>
+                          <h1><p>Amonsoft</p></h1>
+          <span class="flex"></span>
+
+          <!-- Toolbar icons -->
+          <paper-icon-button icon="refresh"></paper-icon-button>
+          <paper-icon-button icon="search"></paper-icon-button>
+          <div class="middle"></div>
+
+          <!-- Application name 
+          <div class="appname bottom paper-font-display2">Amonsoft Company</div -->
+ 
+        </paper-toolbar>
+          
+             <paper-tabs selected="{{route}}">
+
+                 <paper-tab >Home</paper-tab>
+        <paper-tab>SmartPhones</paper-tab>
+        <paper-tab>Mobile Dev</paper-tab>
+     <!--   <paper-tab>Web Dev</paper-tab>
+        <paper-tab>Dev-Tools</paper-tab> -->
+        <paper-tab>Open Source</paper-tab>
+        <paper-tab>About Us</paper-tab>
+
+      </paper-tabs>
+          
+          <section>
+           <paper-material elevation="1">
+                  
+                  <img  data-src="images/slides/samsung.jpg" src="images/iphone.jpg" style="
+    height: 300px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 7%;
+"> <img  data-src="images/slides/samsung.jpg" src="images/htxx.jpg" style="
+    height: 300px;
+    float: right;
+    margin-right: 5%;
+    margin-top: 10%;
+"> 
+                  <h2>Apply For your SmartPhone Today </h2>
+                      <div>
+      <h4>Personal Details</h4>
+      <div class="horizontal-section" style="
+    width: 40%;
+">
+        <form is="iron-form" id="formGet" method="get" action="/">
+          <paper-input name="name" label="Name" required></paper-input>
+            <paper-input name="email" label="Email" required></paper-input>
+            <paper-input name="contact" label="Contact" required></paper-input>
+            <paper-input name="country" label="Country" required></paper-input>
+            <paper-input name="nationality" label="Nationality" required></paper-input>
+            <paper-input name="age" label="Age" required></paper-input>
+            <paper-input name="occupation" label="Ocupation" required></paper-input>
+            <paper-input name="work_Address" label="Work Address" required></paper-input>
+            <paper-input name="home_address" label="Home Address" required></paper-input>
+        <paper-input name="other_address" label="Other Address" required></paper-input>
+             
+         
+          <br>
+<!--
+          <input type="checkbox" name="food" value="donuts" checked> I like donuts<br>
+          <input type="checkbox" name="food" value="pizza"> I like pizza<br>
+-->
+          <br>
+
+          <input type="radio" name="platform" value="android" checked>Android<br>
+          <input type="radio" name="platform" value="ios" checked>iOS<br>
+          <input type="radio" name="platform" value="blackberry">Blackberry<br>
+             <input type="radio" name="platform" value="Windows" checked>Windows<br>
+          <input type="radio" name="platform" value="linux" checked>Linux<br>
+          <input type="radio" name="platform" value="Firefox">Firefox<br>
+
+          <br><br>
+
+          <paper-button raised
+              onclick="clickHandler(event)">Submit</paper-button>
+         <!-- <button type="submit">Native Submit</button> -->
+        </form>
+      </div>
+    </div>
+                   <div>
+      <h4>Submitted form data</h4>
+      <div class="horizontal-section wide">
+        <div id="output"></div>
+      </div>
+    </div>
+                   <script>
+    document.getElementById('formGet').addEventListener('iron-form-submit', display);
+    document.getElementById('formPost').addEventListener('iron-form-submit', display);
+
+    function display(event) {
+      var output = document.getElementById('output');
+        
+      output.innerHTML = JSON.stringify(event.detail);
+        
+       var formget = document.getElementById('formGet');
+        
+        
+    }
+
+    function clickHandler(event) {
+      Polymer.dom(event).localTarget.parentElement.submit();
+    }
+  </script>
+                  
+                   </paper-material>
+          
+          </section>
+
 Hello World
  <div class="wrapper">
       <h2>1. Mixed content demo (One visible item)<em>Resize your browser to review responsive effect</em></h2>
@@ -75,5 +547,38 @@ Hello World
         lazy: true
       })
     </script>
-  </body>
+  </paper-header-panel>
+    </paper-drawer-panel>
+
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="networkFirst"
+                         precache-file="precache.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+        setting-name: setting-value
+      });
+    });
+  </script>
+  <!-- endbuild-->
+</body>
+
 </html>
+
