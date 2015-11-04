@@ -13,18 +13,13 @@
   </head>
   
   <body>
-              <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-   <h1>Welcome to Amonsoft</h1>
-  </div>
-</nav>
-<div style="
-    padding-top: 5%;
-">
+             
+<div style=" padding-top: 2%;">
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#samsung" aria-controls="samsung" role="tab" data-toggle="tab">Samsung</a></li>
+       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Amonsoft</a></li>
+    <li role="presentation" ><a href="#samsung" aria-controls="samsung" role="tab" data-toggle="tab">Samsung</a></li>
     <li role="presentation"><a href="#apple" aria-controls="apple" role="tab" data-toggle="tab">Apple</a></li>
     <li role="presentation"><a href="#microsoft" aria-controls="microsoft" role="tab" data-toggle="tab">Microsoft</a></li>
     <li role="presentation"><a href="#google" aria-controls="google" role="tab" data-toggle="tab">Google</a></li>
@@ -35,7 +30,13 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active " id="samsung">
+      <div role="tabpanel" class="tab-pane active " id="home">
+        <h1>Welcome to Amonsoft</h1>
+     
+      </div>  
+      
+
+    <div role="tabpanel" class="tab-pane" id="samsung">
         <h1> Samsung Galaxy s6</h1>
         <img src="images/SM-G920FZKAXFE-154925-0.jpg" style=" width:50%;"/>
         <button>Order at Amonsoft</button>
@@ -43,13 +44,14 @@
         <img src="images/Tmo_GS6_gld_600x600_xlarge_grp.jpg" style=" width:50%;"/>
            <button>Order at Amonsoft</button>
       </div>
+    
     <div role="tabpanel" class="tab-pane fade" id="apple">
          <h1>Apple 6s</h1>
         <img src="images/the_iphone_plan_large.png" style=" width:50%;"/>
         <button>Order at Amonsoft</button>
       
       </div>
-<<<<<<< HEAD
+
       
     <div role="tabpanel" class="tab-pane fade" id="microsoft">
        <h1>Microsoft Lumia</h1>
@@ -58,153 +60,7 @@
         <h1>The  Microsoft Lumia 950</h1>
         <img src="images/Lumia-950-hero-jpg.jpg" style=" width:50%;"/>
            <button>Order at Amonsoft</button>
-=======
-                   
-    <script type="text/javascript">
-      $('.carousel ul').anoSlide(
-      {
-        items: 1,
-        speed: 1000,
-       // prev: 'a.prev[data-prev-mixed]',
-       // next: 'a.next[data-next-mixed]',
-       // lazy: true,
-        auto:2000
-      }) 
-    </script>
-               <div> 
-    <img  data-src="images/slides/samsung.jpg" src="images/htxx.jpg" style="
-    height: 300px;
-    float: right;
-    margin-right: 5%;
-    margin-top: 10%;
-    width: 50%;
-">  
-                  <h2>Apply For your SmartPhone Today </h2>
-                      <div>
-      <h4>Personal Details</h4>
-      <div class="horizontal-section" style="
-    width: 40%;
-"><div id="thankyou" >
-      <form is="iron-form" id="form-phone" method="get" action="/" hidden="hidden" >
-          <paper-input name="phone" label="SmartPhone Name" required></paper-input>
-              <paper-input name="model" label="SmartPhone Model" required></paper-input>
-              <paper-input name="os" label="Operating Sysytem" required></paper-input></br>
-                 <input type="radio" name="locked" value="not_locked" checked>Locked<br>
-          <input type="radio" name="locked" value="locked" checked>Unlocked</br>
-          </br>
-                           <h2 class="paper-font-display2" style="font-size: 25px; width:200px">   
-               <div class="button raised" style="background-color: #00BCD4; width:220px ">
-      <div class="center" fit >Contract Period</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>
-            <input type="radio" name="period" value="0" checked>Off Contract            
-            <input type="radio" name="period" value="3" checked>3 Months<br>
-            <input type="radio" name="period" value="6" checked>6 Months<br>              
-             <input type="radio" name="period" value="9" checked>9 Months<br> 
-             <input type="radio" name="period" value="12" checked>12 Months<br>
-              <input type="radio" name="period" value="15" checked>15 Months<br> 
-               <input type="radio" name="period" value="24" checked>24 Months<br>  
-                          </br>
-                     <h2 class="paper-font-display2" style="font-size: 25px; width:200px">   
-               <div class="button raised " style="
-    background-color: #00BCD4; width:220px">
-      <div class="center" fit >Network</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>
-                   <input type="radio" name="telecom" value="airtel" checked>Airtel<br>              
-            <input type="radio" name="telecom" value="mtn" checked>MTN<br>
-            <input type="radio" name="telecom" value="africell" checked>Africell<br>              
-             <input type="radio" name="telecom" value="smart" checked>Smart<br> 
-                  <input type="radio" name="telecom" value="k2" checked>K2<br>
-                  <input type="radio" name="telecom" value="vodafone" checked>Vodafone<br>
-                   </br>
-                  <paper-button raised
-              onclick="clickHandler(event)" style="
-    background-color: #00BCD4;
-">Submit</paper-button>
-          </form>
-          </div>
-           
-          
-        <form is="iron-form" id="formGet" method="get" action="/">
-              <h2 class="paper-font-display2" style="font-size: 25px; width:200px">   
-               <div class="button raised" style="background-color: #00BCD4; width:220px ">
-      <div class="center" fit >Smart Phone Details</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>
-            <paper-input name="phone" label="SmartPhone Name" required></paper-input>
-              <paper-input name="model" label="SmartPhone Model" required></paper-input>
-              <paper-input name="os" label="Operating Sysytem" required></paper-input></br>
-                 <input type="radio" name="locked" value="not_locked" checked>Locked<br>
-          <input type="radio" name="locked" value="locked" checked>Unlocked</br>
-          </br>
-                           <h2 class="paper-font-display2" style="font-size: 25px; width:200px">   
-               <div class="button raised" style="background-color: #00BCD4; width:220px ">
-      <div class="center" fit >Contract Period</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>
-            <input type="radio" name="period" value="0" checked>Off Contract            
-            <input type="radio" name="period" value="3" checked>3 Months<br>
-            <input type="radio" name="period" value="6" checked>6 Months<br>              
-             <input type="radio" name="period" value="9" checked>9 Months<br> 
-             <input type="radio" name="period" value="12" checked>12 Months<br>
-              <input type="radio" name="period" value="15" checked>15 Months<br> 
-               <input type="radio" name="period" value="24" checked>24 Months<br>  
-                          </br>
-                     <h2 class="paper-font-display2" style="font-size: 25px; width:200px">   
-               <div class="button raised " style="
-    background-color: #00BCD4; width:220px">
-      <div class="center" fit >Network</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>
-                   <input type="radio" name="telecom" value="airtel" checked>Airtel<br>              
-            <input type="radio" name="telecom" value="mtn" checked>MTN<br>
-            <input type="radio" name="telecom" value="africell" checked>Africell<br>              
-             <input type="radio" name="telecom" value="smart" checked>Smart<br> 
-                  <input type="radio" name="telecom" value="k2" checked>K2<br>
-                  <input type="radio" name="telecom" value="vodafone" checked>Vodafone<br>
-                   </br>
-      <h2 class="paper-font-display2" style="font-size: 25px; width:200px">   
-               <div class="button raised" style="background-color: #00BCD4; width:220px ">
-      <div class="center" fit >Application Details</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>
-          <paper-input name="name" label="Name" required></paper-input>
-            <paper-input name="email" label="Email" required></paper-input>
-            <paper-input name="contact" label="Contact" required></paper-input>
-            <paper-input name="country" label="Country" required></paper-input>
-            <paper-input name="nationality" label="Nationality" required></paper-input>
-            <paper-input name="age" label="Age" required></paper-input>
-            <paper-input name="occupation" label="Ocupation" required></paper-input>
-            <paper-input name="work_Address" label="Work Address" required></paper-input>
-            <paper-input name="home_address" label="Home Address" required></paper-input>
-        <paper-input name="other_address" label="Other Address" required></paper-input>
-             
-         
-          <br>
-<!--
-          <input type="checkbox" name="food" value="donuts" checked> I like donuts<br>
-          <input type="checkbox" name="food" value="pizza"> I like pizza<br>
--->
-          <br>
-    <!--
-          <input type="radio" name="platform" value="android" checked>Android<br>
-          <input type="radio" name="platform" value="ios" checked>iOS<br>
-          <input type="radio" name="platform" value="blackberry">Blackberry<br>
-             <input type="radio" name="platform" value="Windows" checked>Windows<br>
-          <input type="radio" name="platform" value="linux" checked>Linux<br>
-          <input type="radio" name="platform" value="Firefox">Firefox<br>
- -->
-          <br><br>
-            
 
-          <paper-button raised 
-              onclick="clickHandler(event)" style="
-    background-color: #00BCD4;
-">Submit</paper-button>
-         <!-- <button type="submit">Native Submit</button> -->
-        </form>
->>>>>>> origin/master
       </div>
     <div role="tabpanel" class="tab-pane fade" id="google">
          <h1>Google Nexus Home</h1>
@@ -222,7 +78,7 @@
         <img src="images/medium06c.jpg" style=" width:50%;"/>
            <button>Order at Amonsoft</button>
       </div>
-<<<<<<< HEAD
+
        <div role="tabpanel" class="tab-pane fade" id="htc">
          <h1>HTC ONE A9</h1>
         <img src="images/htc-aero-global-carbon-gray-phone-listing.png" style=" width:50%;"/>
@@ -230,237 +86,11 @@
         <h1>HTC ONE M9</h1>
         <img src="images/htc-one-m9-global-ksp-easy-photo-access.jpg" style=" width:50%;"/>
            <h1>HTC ONE M8</h1>
-        <img src="images/htc-hima-screen-protector-listing-240x240.png" style=" width:50%;"/>
-           <h1>HTC ONE M7</h1>
         <img src="images/hero-image.jpg" style=" width:50%;"/>
+      
            <button>Order at Amonsoft</button>
       </div>
   </div>
-=======
-                   
-    <script type="text/javascript">
-     /* $('.carousel ul').anoSlide(
-      {
-        items: 1,
-        speed: 500,
-        prev: 'a.prev[data-prev-mixed]',
-        next: 'a.next[data-next-mixed]',
-        lazy: true,
-        auto:2000
-      }) */
-$('.carousel ul').anoSlide(
-{
-  items: 1,
-  speed: 500,
-  prev: 'a.prev[data-prev-caption]',
-  next: 'a.next[data-next-caption]',
-  lazy: true,
-   auto:2000,
-  onStart: function(ui)
-  {
-    /* Remove existing caption in slide */
-    ui.slide.element.find('.caption').remove();
-  },
-  onEnd: function(ui)
-  {
-    /* Get caption content */
-    var content = ui.slide.element.data('caption');
-    
-    /* Create a caption wrap element */
-    var caption = $('<div/>').addClass('caption').css(
-    {
-      position: 'absolute', 
-      background: 'rgb(0,0,0)',
-      color: 'rgb(255,255,255)',
-      textShadow: 'rgb(0,0,0) -1px -1px',
-      opacity: 0.5,
-      top: -100,
-      left: 50,
-      padding: 20,
-      webkitBorderRadius: 5,
-      mozBorderRadius: 5,
-      borderRadius: 5
-    }).html(content);
-    
-    /* Append caption to slide and animate it. Animation is really up to you. */
-    caption.appendTo(ui.slide.element).animate(
-    {
-      top:50
-    });
-  }
-})
-    </script>
-              </paper-material>
-              <paper-material>
-                <div>
-   <p> <strong> Company Overview </strong> </p></br>
-<p>Amonsoft Inc. is driving both arms of technology, Software and Hardware. We are primarily developing software for the mobile Ecosystem.  our major focus is on the roll out strategy, which is through Mobile Smartphones. So we have set out to streamline the distribution of smartphones in a more convenient and comfortable way for our clients suing long term contracts.
-</br><strong>Company News</strong></br>
-<p>Amonsoft chief executive officer, Amon Nyesigye has announced its recent conclusion of training in the Tony Elumelu Entrepreneurship program, hosted by the Tony Elumelu Foundation in Nigeria. 
-The company is embarking on a certification journey to ensure at least 1,000 Ugandans are certified to receive the Amonsoft Powered Smartphones by 2016.
-</p></br><strong>Background and Development</strong></br>
-<p>Amonsoft Ltd began in 2014, with the vision to spread technology and power the next generation of software and Smartphones. We have since done a pilot of the distribution model, collecting data, and making analysis and streamlining the entire process. 2015, we are now embarking on another the second pilot, with new guidelines, terms and conditions.
-</p></br><strong>Present Conditions</strong></br>
-<p>We are laying ground for the distribution channels and building a network o support the structure.
-We are looking to server 150 clients in our second pilot of the business.</p>
-</br><strong>Workforce</strong></br>
-<p>We are looking to employee about 10-25 workers in 2015/16, providing great pay, preferably young, smart and intelligent people.
-We shall be expanding our office from our current location to a more comfortable and convenient workplace to improve working conditions and to meet the work demands
-</p></br><strong>Key Processes</strong></br>
-<p>We are setting up this contracts model of smartphone technology using great business data and assessment. 
-We are certifying as many clients as possible with potential client base , so as to make he eligible to acquire the devices .
-We are also building software to support the business so run smoothly </p>
-<strong>Thank you</strong></br></br>
-<p>Amon Nyesigye
-Chairman & CEO Amonsoft LTD</p>
-</div>
-              </paper-material>
-            </section>
-      
-      
-               <section data-route="3">
-              <paper-material elevation="1">
-                <h2 class="paper-font-display2">Tools Used at Amonsoft</h2>
-                  At  Amonsoft we power our technology and products using some of the high class product on market. <br>We as a mobile development company, try as much as possible to utilize differnt tools to achieve efficency , Productivity, fluidity and comfort when working to ensure of products work on as many platforms as possible and reach as many people as possible. </br> We provide this comprehensive list of how we operate and the differnt tools we use to showcase what a small company can use and utilize to create high class top notch products.
-                  <ul>
-                  <li>Servers</li>
-                      <li>Text-Editors</li>
-                      <li>Web Browsers</li>
-                      <li>Databses</li>
-                      <li>Programming Languages</li>
-                      <li>IDEs</li>
-                      
-                
-                      
-                      
-                  </ul>
-              </paper-material>
-                   <paper-material elevation="1">
-                 <h2 class="paper-font-display2" style="font-size: 25px;">   
-               <div class="button raised blue ">
-      <div class="center" fit>Servers</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>
-                       We use many Servers at Amonsoft to run and test our products in House, and one of our major key factors when selecting a server ;
-                       <li>Type of project we are undertaking</li>
-                       <li>Speed of the server </li>
-                       <li>Ease in execution of the compiled code to the broswer</li>
-                       <li>Disk space it occupies on the computers</li>
-                       <li>Programming language we are using for the project</li>
-                       </br>
-                       *These are not in order of priority
-                   </br> 
-      </br>
-                    <li style="
-    text-decoration: underline;
-">Bracket(IDE)inbuilt WebServer</li>
-</br> This is used when runnimg Web based projects without any server side code yet, as when we are in design phase. 
-This helps us to execute to the browsers faster and make changes in real time without fireing up the browser.
- The only problem is that , it only launches in Google Chrome, but hope for more support or customisation from the team at bracket, Adobe Systems
-</br></br>
-                    <li style="
-    text-decoration: underline;
-">Xampp Server</li>
-</br> We use Xampp to run full web applications , Exploiting its power to combine the UI pages , Scripts and databases. When a project is predominatly using Php scripts, its easy to setup since php compilers are inbuilt in xampp. We also use the PhpMyadmin database to interact with databases , using the CRUD methods , making the application come alive.
-</br></br>
-                     <li style="
-    text-decoration: underline;
-">Node js Server</li>
-</br>
-We started using Node ealier in 2015, when we wanted to test building of a product with a light weight server, and one whose language was so similar to the javascript we used in websites. Node helped us achieve that, wrinting servers in Javasrcipt and manipulating them . Node also gives us the opportunity to monitor our server behaviour, how its responding to requests, how many request are being recieved.
-                     
-                  
-              </paper-material>
-                   
-                    </paper-material>
-                   <paper-material elevation="1">
-               <h2 class="paper-font-display2" style="font-size: 25px;">   
-               <div class="button raised green ">
-      <div class="center" fit >Text Editors</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>We use many Text Editors at Amonsoft still dependant on the project and sometimes preference to an Engineer. </n>
-                 We take time to carefully select whic is suitable based on a number of factors;
-<li>The autocomplete feature is a very big plus for its adoption</li>
-<li>Language detection is key</li>
-<li>Colour theme and styling (Dark/Dracula prefence is high as noticed)</li>
-<li>Inbuilt server presence</li>
-<li>Presence of tabs as well</li>
-                       </br>
-We predominantly use the folllowing ;
-</br>
-<li>Bracket from Adobe Systems</li>
-<li>Atom from the Github</li>
-<li>Code Editor from Microsoft</li>
-<li>Notepad++ </li>
-<li>Chrome Devlopment Tools Editor</li>
-<li>Sublime Text Editor</li>
-<li>NotePad from Microsoft</li>
-</br> </br>
-*These are not in order of priority
-              </paper-material>
-
-  <paper-material elevation="1">
-               <h2 class="paper-font-display2" style="font-size: 25px;">   
-               <div class="button raised blue " style="width:20%">
-      <div class="center" fit >Programming Languages</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>We Try to utilize Oblect Oriented Languages unlike structured languages , this helps us make modules and make our work faster and easier. </n>
-                 We ahve used many languages ever since inception one year ago, basing on diffent factors including:-
-<li>length of the hello world print execution command</li>
-<li>UI building capabilites</li>
-<li>How the language plays with external factors forexample,Images</li>
-<li>Ease in learning</li>
-<li>Level of adoption in a specific field</li>
-                       </br>
-We predominantly use the folllowing ;
-</br>
-<li>Java - by Oracle COrpration</li>
-<li>HTML 5 and CSS3 </li>
-<li>javascript for web</li>
-<li>PHP for scripting </li>
-<li>C# and F# by Microsoft Corpration</li>
-<li>Oblective-C for iOS applications</li>
-<li>Swift by Apple Inc.</li>
-</br> </br>
-*These are not in order of priority
-              </paper-material>
-
-  <paper-material elevation="1">
-               <h2 class="paper-font-display2" style="font-size: 25px;">   
-               <div class="button raised green ">
-      <div class="center" fit >Databases</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>We tyr to make our databases as simple as possible to make interation withe external applications easier. </n>
-                We prefer suing SQL databases as we train to venture in new No-Sql databases. So predominatly we use :-
-
-<li>Ms Access fro our onDesktop Database</li>
-<li>MySQL for our Web and Application Databases</li>
-
-
-              </paper-material>
-
-  <paper-material elevation="1">
-               <h2 class="paper-font-display2" style="font-size: 25px;">   
-               <div class="button raised blue " style="width:20%">
-      <div class="center" fit >Web Browsers</div>
-      <paper-ripple></paper-ripple>
-                 </div></h2>We at Amonsoft are not baised , so we try our web applications on many browsers to try to keep within range for support for as many as possible </n>
-            This is a list of some of them:-
-<li>Google Chrome Canary</li>
-<li>Google Chrome</li>
-<li>Mozilla FireFox(Dev Edition)</li>
-<li>Mozilla FireFox</li>
-<li>Microsoft Edge</li>
-<li>Safari</li>
-<li>Mobile Chrome</li>
-<li>Mobile Firefox</li>
-
-</br> </br>
-*These are not in order of priority
-</br></br>
-<strong>More To Come........</strong>
-              </paper-material>
->>>>>>> origin/master
 
 </div>
       
