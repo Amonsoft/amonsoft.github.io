@@ -9,96 +9,253 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #303F9F, #303F9FF);/*#303F9FF*/
+  background-image: -moz-linear-gradient(top,#303F9F,#303F9F);
+  background-image: -ms-linear-gradient(top, #303F9F, #303F9F);
+  background-image: -o-linear-gradient(top, #303F9F, #303F9F);
+  background-image: linear-gradient(to bottom, #303F9F, #303F9F);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: Georgia;
+  color: #f8f7fa;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  border: solid #f7f9fa 2px;
+  text-decoration: none;
+}
 
+        .btn01 {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #2196F3, #2196F3);
+  background-image: -moz-linear-gradient(top,#2196F3,#2196F3);
+  background-image: -ms-linear-gradient(top, #2196F3, #2196F3);
+  background-image: -o-linear-gradient(top, #2196F3, #2196F3);
+  background-image: linear-gradient(to bottom, #2196F3, #2196F3);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: Georgia;
+  color: #f8f7fa;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  border: solid #f7f9fa 2px;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #03A9F4);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #03A9F4);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #03A9F4);
+  background-image: -o-linear-gradient(top, #3cb0fd, #03A9F4);
+  background-image: linear-gradient(to bottom, #3cb0fd, #03A9F4);
+  text-decoration: none;
+}
+      </style>
   </head>
   
-  <body>
-             
-<div style=" padding-top: 2%;">
+  <body style="
+    background-color: white ;
+">
+          <!--whitesmoke-- thats color..#FAFAFA..-->
+          <h1 style="
+ 
+    position: relative;
+    left: 15%;
+    color: #707071;
+
+">Welcome to Amonsoft SmartPhone Contracts</h1>
+<div style=" padding-top: 1%;">
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Amonsoft</a></li>
-    <li role="presentation" ><a href="#samsung" aria-controls="samsung" role="tab" data-toggle="tab">Samsung</a></li>
-    <li role="presentation"><a href="#apple" aria-controls="apple" role="tab" data-toggle="tab">Apple</a></li>
-    <li role="presentation"><a href="#microsoft" aria-controls="microsoft" role="tab" data-toggle="tab">Microsoft</a></li>
-    <li role="presentation"><a href="#google" aria-controls="google" role="tab" data-toggle="tab">Google</a></li>
-          <li role="presentation" class="active"><a href="#htc" aria-controls="htc" role="tab" data-toggle="tab">HTC</a></li>
-    <li role="presentation"><a href="#lg" aria-controls="lg" role="tab" data-toggle="tab">LG</a></li>
+       <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="btn1" >Amonsoft</a></li>
+    <li role="presentation" ><a href="#samsung" aria-controls="samsung" role="tab" data-toggle="tab" class="btn1">Samsung</a></li>
+    <li role="presentation"><a href="#apple" aria-controls="apple" role="tab" data-toggle="tab" class="btn1">Apple</a></li>
+    <li role="presentation"><a href="#microsoft" aria-controls="microsoft" role="tab" data-toggle="tab"class="btn1" >Microsoft</a></li>
+    <li role="presentation"><a href="#google" aria-controls="google" role="tab" data-toggle="tab" class="btn1">Google</a></li>
+          <li role="presentation" ><a href="#htc" aria-controls="htc" role="tab" data-toggle="tab"class="btn1" >HTC</a></li>
+    <li role="presentation"><a href="#lg" aria-controls="lg" role="tab" data-toggle="tab" class="btn1">LG</a></li>
 
   </ul>
 
   <!-- Tab panes -->
+    </br>
   <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active " id="home">
-        <h1>Welcome to Amonsoft</h1>
+      <div role="tabpanel" class="tab-pane active " id="home" style="
+background-image:url(http://localhost/amonsoft.github.io/images/Untitled.png)" >
+          <!--style="
+background-image:url(http://localhost/amonsoft.github.io/images/new1.jpg)" -->
      
-      </div>  
+          <div style="
+    position: relative;
+    left: 05%;
+">
+     <form>
+     <p>Please enter your Budget</p>
+         Amount: <input type="number" onerror="Please enter a figure" required />$
+         </br> </br>
+          Brand  : <input type="text"  onerror="Please enter a brand" required />
       
+          </br></br>
+      <button type="submit" class="btn"> Recommend</button>
+    </form>
+      
+   
+    <h3>Trending</h3>
+    <ul>
+    <li>HTC one A9</li>
+        <li>Iphone 6s</li>
+        <li>Samsung Note 5</li>
+        <li>Google Nexus 6p</li>
+    <li>Microsoft Lumia 950</li>
+    </ul>
+          
+    <h2> Contacts us For a customized Order</h2>
+    <form></br>
+    Name:<input  type="text" name="name" required /></br></br>
+        Email: <input type="email" name="email" required /></br></br>
+        Contact: <input type="text" name="contact" required /></br></br>
+        Brand Of Choice: <input type="text" name="brand" required /></br></br>
+        Brief Description: <input type="text" multiple maxlength="250" name="description" required /></br></br>
+        <button type="submit" class="btn"> Send</button></br></br>
+    </form>
+ 
+      </div>  
+</div>
+
 
     <div role="tabpanel" class="tab-pane" id="samsung">
-        <h1> Samsung Galaxy s6</h1>
-        <img src="images/SM-G920FZKAXFE-154925-0.jpg" style=" width:50%;"/>
-        <button>Order at Amonsoft</button>
-        <h1> Samsung Galaxy s6</h1>
-        <img src="images/Tmo_GS6_gld_600x600_xlarge_grp.jpg" style=" width:50%;"/>
-           <button>Order at Amonsoft</button>
+        <div id="samsung_s6_edge" style="float: left;width: 50%;">
+        <h1 style="color:#707071;"> Samsung Galaxy s6 Edge</h1>
+        <img src="images/galaxy-s6-edge_gallery_front_gold.png" style=" width:70%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+        <div id="samsung_s6" style="float: right; width: 50%;">
+        <h1 style="color:#707071;"> Samsung Galaxy s6</h1>
+        <img src="images/Tmo_GS6_gld_600x600_xlarge_grp.jpg" style=" width:70%;"/>
+           <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+         <div id="samsung_note_4" style="float: right; width: 50%;">
+          <h1 style="color:#707071;"> Samsung Note 5.0</h1>
+        <img src="images/galaxy-note5_gallery_with-spen_black_s3.png" style=" width:70%;"/>
+           <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+          <div id="samsung_note_5" style="float: right; width: 50%;">
+          <h1 style="color:#707071;"> Samsung Note 5.0</h1>
+        <img src="images/galaxy-note5_gallery_with-spen_black_s3.png" style=" width:70%;"/>
+           <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
       </div>
     
     <div role="tabpanel" class="tab-pane fade" id="apple">
-         <h1>Apple 6s</h1>
-        <img src="images/the_iphone_plan_large.png" style=" width:50%;"/>
-        <button>Order at Amonsoft</button>
-      
+        
+           <div id="apple_6s" style="float: left;width: 50%;">
+         <h1 style="color:#707071;">Apple 6</h1>
+        <img src="images/the_iphone_plan_large.png" style=" width:70%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+        <div id="apple_6_Plus" style="float: right; width: 50%;">
+       <h1 style="color:#707071;">Apple 6 Plus</h1>
+        <img src="images/design_front_large.png" style="  width: 35%;margin-left: 25%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+            <div id="apple_6s" style="float: left;width: 50%;">
+         <h1 style="color:#707071;">Apple 6s</h1>
+        <img src="images/iphone-6-plus-reachability.jpg" style=" width:70%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+        <div id="apple_6_Plus" style="float: right; width: 50%;">
+       <h1 style="color:#707071;">Apple 6s Plus Plus</h1>
+        <img src="images//iPhone_6_PLUS_preview_MG_1875.jpg" style="  width: 35%;margin-left: 25%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+        
       </div>
 
       
     <div role="tabpanel" class="tab-pane fade" id="microsoft">
-       <h1>Microsoft Lumia</h1>
-        <img src="images/Lumia-950-performance-jpg.jpg" style=" width:50%;"/>
-        <button>Order at Amonsoft</button>
-        <h1>The  Microsoft Lumia 950</h1>
-        <img src="images/Lumia-950-hero-jpg.jpg" style=" width:50%;"/>
-           <button>Order at Amonsoft</button>
-
-      </div>
-    <div role="tabpanel" class="tab-pane fade" id="google">
-         <h1>Google Nexus Home</h1>
-        <img src="images/nexus-home-hero-1600.jpg" style=" width:50%;"/>
-        <button>Order at Amonsoft</button>
-        <h1>Google Nexus 6P</h1>
-        <img src="images/n6p-1600.png" style=" width:50%;"/>
-           <button>Order at Amonsoft</button>
-      </div>
-       <div role="tabpanel" class="tab-pane fade" id="lg">
-         <h1>LG G4</h1>
-        <img src="images/medium01c.jpg" style=" width:50%;"/>
-        <button>Order at Amonsoft</button>
-        <h1>LG G3</h1>
-        <img src="images/medium06c.jpg" style=" width:50%;"/>
-           <button>Order at Amonsoft</button>
-      </div>
-
-       <div role="tabpanel" class="tab-pane fade" id="htc">
-         <h1>HTC ONE A9</h1>
-        <img src="images/htc-aero-global-carbon-gray-phone-listing.png" style=" width:50%;"/>
-        <button>Order at Amonsoft</button>
-        <h1>HTC ONE M9</h1>
-        <img src="images/htc-one-m9-global-ksp-easy-photo-access.jpg" style=" width:50%;"/>
-           <h1>HTC ONE M8</h1>
-        <img src="images/hero-image.jpg" style=" width:50%;"/>
       
-           <button>Order at Amonsoft</button>
+<div id="microsoft_lumia" style="float: left;width: 50%;">
+           <h1 style="color:#707071;">Microsoft Lumia</h1>
+        <img src="images/Lumia-950-performance-jpg.jpg" style=" width:70%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+        <div id="microsoft_lumia-950" style="float: right; width: 50%;">
+      <h1 style="color:#707071;">The  Microsoft Lumia 950</h1>
+        <img src="images/Lumia-950-hero-jpg.jpg" style=" width:70%;"/>
+           <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+      </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="google">
+         <h1 style="color:#707071;">Google Nexus Home</h1>
+        <img src="images/nexus-home-hero-1600.jpg" style=" width:70%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        <h1 style="color:#707071;">Google Nexus 6P</h1>
+        <img src="images/n6p-1600.png" style=" width:70%;"/>
+           <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+      </div>
+
+       <div role="tabpanel" class="tab-pane fade" id="lg">
+        <div id="lg_g4" style="float: left;width: 50%;">
+        <h1 style="color:#707071;">LG G4</h1>
+        <img src="images/medium01c.jpg" style=" width:70%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+        <div id="lg_g3" style="float: right; width: 50%;">
+        <h1 style="color:#707071;">LG G3</h1>
+        <img src="images/medium06c.jpg" style=" width:70%;"/>
+           <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+           <div id="lg_g4" style="float: left;width: 50%;">
+        <h1 style="color:#707071;">LG G4</h1>
+        <img src="images/medium01c.jpg" style=" width:70%;"/>
+        <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+        <div id="lg_g3" style="float: right; width: 50%;">
+        <h1 style="color:#707071;">LG G3</h1>
+        <img src="images/medium06c.jpg" style=" width:70%;"/>
+           <button class="btn" >Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+           
+      </div>
+
+       <div role="tabpanel" class="tab-pane fade" id="htc">           
+           <div id="htc_one_a9" style="float: left;width: 50%;">
+  <h1 style="color:#707071;">HTC ONE A9</h1>
+        <img src="images/htc-aero-global-carbon-gray-phone-listing.png" style=" width:70%;"/>
+        <button class="btn">Order at Amonsoft</button> <button class="btn">Details</button>
+        </div>
+        <div id="htc_one_m9" style="float: right; width: 50%;">
+ <h1 style="color:#707071;">HTC ONE M8</h1>
+        <img src="images/htc-one-m9-global-ksp-easy-photo-access.jpg" style=" width:70%;"/>
+           <button >Order at Amonsoft</button> <input  onclick="details();" type="checkbox" id="checkee"  />
+            <div id="details" >DetailsDetailsDetailsDetailsDetailsDetails</div>
+        </div>
+           
       </div>
   </div>
 
 </div>
-      
-      
+
+<script type="text/javascript">
+    
+     function details(){
+    if (document.getElementById('checkee').checked) {
+        document.getElementById('details').style.display = 'block';
+    } else {
+        document.getElementById('details').style.display = 'none';
+    } 
+      </script>
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
   </body>
 </html>
