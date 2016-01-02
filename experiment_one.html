@@ -1,0 +1,48 @@
+<!Doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/java.css">
+    </head>
+    
+    
+
+ <body>
+       <div class="mdl-layout__tab-panel" id="experiment">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--12-col">
+  <h3> Amonsoft Web Experiements</h3>
+                <p>Experiments</p>
+                <ol> 
+                <li>Click the Sun and see</li>
+                </ol>
+    <div id= "orb" class= "sun"></div>
+    <div id= "sky" class= "day"></div>
+
+            </div>
+          </section>
+        </div>
+   
+</body>
+       
+    
+    
+          <script src="scripts/jquery-2.1.4.min.js"></script>
+     <!-- <script src="scripts/javascript.js"></script> -->
+    <script>
+    $( document ).ready( function() {
+    $( '#orb' ).click( function() {
+        if ($( '#orb' ).hasClass( 'sun' )){
+            $('#orb').removeClass('sun').addClass('moon');
+        } else {
+             $('#orb').removeClass('moon').addClass('sun');
+        }
+        if ($('#sky').hasClass('day')) {
+    $('#sky').removeClass('day').addClass('night');
+}
+else {
+    $('#sky').removeClass('night').addClass('day');
+}
+    });
+});
+    </script>
+    </html>
