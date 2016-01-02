@@ -1,0 +1,94 @@
+<!Doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles/exp_2.css" >
+</head>
+    
+<body>
+      <h3 style="
+    color: wheat;
+"> Amonsoft Web Experiement One: Jvascript, JQuery , Events, Audio  inspired by Google Creative labs</h3>
+                <p style="
+    color: wheat;
+">Play Some music on our Piano</p>
+               
+                
+    <audio id="cAudio" >
+    <source src="music_notes/c_note.mp3" type="audio/mpeg"></source>
+    <source src="music_notes/c_note.ogg" type="audio/ogg"></source>
+    <source src="music_notes/c_note.wav" type="audio/wav"></source></audio>
+  <audio id="aAudio">
+    <source src="music_notes/a_note.mp3" type="audio/mpeg"></source>
+    <source src="music_notes/a_note.ogg" type="audio/ogg"></source>
+    <source src="music_notes/a_note.wav" type="audio/wav"></source></audio>
+  <audio id="bAudio">
+    <source src="music_notes/b_note.mp3" type="audio/mpeg"></source>
+    <source src="music_notes/b_note.ogg" type="audio/ogg"></source>
+    <source src="music_notes/b_note.wav" type="audio/wav"></source></audio>
+<audio id="dAudio">
+    <source src="music_notes/d_note.mp3" type="audio/mpeg"></source>
+    <source src="music_notes/d_note.ogg" type="audio/ogg"></source>
+    <source src="music_notes/d_note.wav" type="audio/wav"></source></audio>
+<audio id="eAudio">
+    <source src="music_notes/e_note.mp3" type="audio/mpeg"></source>
+    <source src="music_notes/e_note.ogg" type="audio/ogg"></source>
+    <source src="music_notes/e_note.wav" type="audio/wav"></source></audio>
+<audio id="fAudio">
+    <source src="music_notes/f_note.mp3" type="audio/mpeg"></source>
+    <source src="music_notes/f_note.ogg" type="audio/ogg"></source>
+    <source src="music_notes/f_note.wav" type="audio/wav"></source></audio>
+<audio id="gAudio">
+    <source src="music_notes/g_note.mp3" type="audio/mpeg"></source>
+    <source src="music_notes/g_note.ogg" type="audio/ogg"></source>
+    <source src="music_notes/g_note.wav" type="audio/wav"></source></audio>
+
+
+<div id="instrument" >
+    <div id="a" class="box"></div>
+    <div id="b" class="box"></div>
+    <div id="c" class="box"></div>
+    <div id="d" class="box"></div>
+    <div id="e" class="box"></div>
+    <div id="f" class="box"></div>
+    <div id="g" class="box"></div>
+</div>
+</body>
+<script src="scripts/jquery-2.1.4.min.js"></script>
+<script>
+var cNote = document.getElementById('cAudio');
+    $('#c').mousedown(function(){
+        cNote.currentTime = 0;
+        cNote.play();
+    });
+    var aNote = document.getElementById('aAudio');
+    $('#a').mousedown(function(){
+        aNote.currentTime = 0;
+        aNote.play();
+    });
+    var bNote = document.getElementById('bAudio');
+    $('#b').mousedown(function(){
+        bNote.currentTime = 0;
+        bNote.play();
+    });
+    var dNote = document.getElementById('dAudio');
+    $('#d').mousedown(function(){
+        dNote.currentTime = 0;
+        dNote.play();
+    });
+    var eNote = document.getElementById('eAudio');
+    $('#e').mousedown(function(){
+        eNote.currentTime = 0;
+        eNote.play();
+    });
+    var fNote = document.getElementById('fAudio');
+    $('#f').mousedown(function(){
+        fNote.currentTime = 0;
+        fNote.play();
+    });
+    var gNote = document.getElementById('gAudio');
+    $('#g').mousedown(function(){
+        gNote.currentTime = 0;
+        gNote.play();
+    });
+</script>
+</html>
