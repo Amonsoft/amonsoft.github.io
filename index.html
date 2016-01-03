@@ -56,12 +56,21 @@
       <link rel="stylesheet" href="./material.min.css">
 <script src="./material.min.js"></script>
       <script src="scripts/jquery-2.1.4.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <!-- for material design---->
       
       <!-- for firebase-->
        <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
        <!-- for firebase-->
+      <!-- Email service-->
+      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_OQsirUT7ZJle7GbNOvTr7");
+   })();
+</script>
+      
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
       
@@ -103,7 +112,7 @@
               
   <p> We begine the new year with the introduction of Amonsoft Web Experiments by the web Engineering team based on Google creative labs projects
     We are building web experiemnts to show the power of the web and all possibilities so inspire and encourage developers to promote web development</p>
-                <p> Please move to the experiments page <a href="#experiment" >Experiments</a></p>
+                <p> Please move to the <strong>experiments Tab</strong> and see the fun in Web engineering  </p>
                   <img src="images/web-technologies.gif" style=" width: 100%;" >
                </div>
               
@@ -265,7 +274,7 @@
               <li >Data analysis</li>
             </ol>
                   </br>
-                Please contact us :- staff@amonsoft.github.com or +256-700-110-561
+                Please contact us :- amonsoftx@gmail.com or +256-700-110-561
               </div>
                 <!--
               <div class="mdl-card__actions">
@@ -578,6 +587,7 @@ Amonsoft Corporation</br>
               <li><a href="#">Amonsoft Corpration</a></li>
               <li><a href="#">Help</a></li>
               <li><a href="#">Privacy and Terms</a></li>
+            
             </ul>
           </div>
         </footer>
@@ -599,6 +609,14 @@ Amonsoft Corporation</br>
 
   ga('create', 'UA-71876848-1', 'auto');
   ga('send', 'pageview');
+
+</script>
+<script>
+   
+    function emailnow() {
+    emailjs.send("gmail","comment_email",{name: "James", notes: "Check this out!"});
+
+}
 
 </script>
     
