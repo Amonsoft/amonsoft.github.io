@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/exp_3.css" >
+</head>
+
+<body>
+<div id="clock">
+    
+    </div>
+    <audio src="music_notes/a_note.ogg" id="alarm"></audio>
+</body>   
+           <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script>
+    $(document).ready(function(){
+       
+        function displayTime(){
+            var sound = document.getElementById('alarm') ;
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var meridiem;
+                 var clockDIV = document.getElementById('clock');
+        
+             if(seconds == 6){
+                sound.play();
+            } else{
+        
+            }
+            
+            if(seconds<10){
+                seconds = "0"+seconds;
+            }
+            if(hours<12){
+                meridiem = "AM"
+            }else{
+                meridiem = "PM"
+            }
+            
+            
+        clockDIV.innerText = hours +":"+minutes+":"+seconds+""+meridiem;
+       
+            //setInterval(displayTime,1000);
+        }
+        
+        displayTime();
+        setInterval(displayTime,1000);
+   
+    });
+    </script>
+</html>
