@@ -214,3 +214,14 @@ html, body {
 .black{
     background-color: black;
 }
+
+
+
+
+
+@media screen and (min-width:200px) and (max-width:310px) {
+    #photo{width: 0%; }
+    .photo{width: 0%; }
+    
+}
+
