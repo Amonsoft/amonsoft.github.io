@@ -1,0 +1,184 @@
+<!Doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles/exp_4.css">
+</head>
+    
+<body><h4>AMONSOFT EXPERIEMENT inspired by the cool guys at <a href="http://codepen.io/">Code Pen</a></h4>
+  <h1>Javascript Calculator-Redone</h1>  
+
+<div id="calculator" class="calculator">
+
+  <button id="clear" class="clear">C</button>
+
+  <div id="viewer" class="viewer">0</div>
+
+  <button id="numx" class="num" data-num="7">7</button>
+  <button  id="numx" class="num" data-num="8">8</button>
+  <button id="numx" class="num" data-num="9">9</button>
+ <button  data-ops="plus" class="ops">+</button>
+
+  <button id="numx" class="num" data-num="4">4</button>
+  <button id="numx" class="num" data-num="5">5</button>
+  <button id="numx" class="num" data-num="6">6</button>
+  <button data-ops="minus" class="ops">-</button>
+
+  <button id="numx" class="num" data-num="1">1</button>
+  <button id="numx" class="num" data-num="2">2</button>
+  <button id="numx" class="num" data-num="3">3</button>
+  <button data-ops="times" class="ops">*</button>
+
+  <button id="numx" class="num" data-num="0">0</button>
+  <button class="num" data-num=".">.</button>
+  <button id="equals" class="equals" data-result="">=</button>
+  <button data-ops="divided by" class="ops">/</button>
+</div>
+
+<button id="reset" class="reset">Reset Universe?</button>
+        
+    
+</body>   
+    <script>
+    
+        (function(){
+            "use strict";
+            
+            //shortcut to get elements
+            var el = function(element){
+                if(element.charAt(0) === "#"){
+                    return document.querySelector(element);
+                }
+                return document.querySelectorAll(element);
+            };
+            
+            //variables
+            var viewer = el("#viewer"), //this is the calculator scree where resuts are displayed
+            equals = el("#equals"), //equals sign
+            nums = el(".num"), //list of numbers
+            ops = el(".ops"), //list of operators
+            theNum = "", //current number
+            oldNum = "",//first number    
+            resultNum, //result
+                operator;//operator
+            
+            //function to get a number when the button is clicked
+            var setNum = function(){
+                if(resultNum){ //confusing
+                    theNum = this.getAttribute("data-num");
+                    resultNum = "";
+                    
+                }else{
+                    theNum += this.getAttribute("data-num");
+                } 
+                viewer.innerHTML = theNum; //display cuurent number
+            };
+            
+            
+            //when the operator is clicked, pass the number to old num and save the operator
+            
+            var moveNum = function(){
+                oldNum =theNum;
+                theNum ="";
+                operator = this.getAttribute("data-ops");
+               // equals.setAttribute("data-result","");
+            };
+            
+            //when equals is clicked,calculator result
+            var displayNum = function(){
+                
+                oldNum = parseFloat(oldNum);
+                theNum = parseFloat(theNum);
+                
+                //Perform Operations
+                
+                switch(operator){
+                    case "plus":
+                        resultNum = oldNum + theNum;
+                        break;
+                        
+                    case "minus":
+                        resultNum = oldNum - theNum;
+                        break;
+                        
+                    case "times":
+                        resultNum = oldNum * theNum;
+                        break;
+                        
+                    case "divide by":
+                        resultNum = oldNum / theNum;
+                        break;
+                        //incase the equal sign is pressed without any operator, display the number .
+                    default:
+                        resultNum = theNum;
+                        break;
+                        
+                }
+                
+                 // If NaN or Infinity returned
+    if (!isFinite(resultNum)) {
+      if (isNaN(resultNum)) { // If result is not a number; set off by, eg, double-clicking operators
+        resultNum = "You broke it!";
+      } else { // If result is infinity, set off by dividing by zero
+        resultNum = "Look at what you've done";
+        el('#calculator').classList.add("broken"); // Break calculator
+        el('#reset').classList.add("show"); // And show reset button
+      }
+    }
+                
+                //didsplaying resulting
+                viewer.innerHTML = resultNum;
+               // equals.setAttribute("data-result","spot");
+                
+                //reseting old num to keep rresult
+                
+                oldNum = 0;
+                theNum = resultNum;
+                
+                
+                
+            };
+            
+            //clearing the screen
+             var clearAll = function(){
+                 oldNum = "";
+                 theNum = "";
+                 viewer.innerHTML = "0";
+                 equals.setAttribute("data-result",resultNum);
+             };
+            
+            //initaiting click events
+            
+            //add click event to number
+            for(var i = 0,l=nums.length;i<l;i++){
+                nums[i].onclick = setNum;
+            }
+            
+            //add click events to operators
+            for(var i =0,l = ops.length; i<l;i++){
+                ops[i].onclick = moveNum;
+            }
+            
+            //adding click event to equals
+            equals.onclick = displayNum;
+            
+            //adding click event to CLear button
+            el("#clear").onclick = clearAll;
+            
+            //adding clcik event tor reset button
+            el("#reset").onclick = function(){
+                window.location = window.location;
+            };
+            
+        }());
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71876848-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
