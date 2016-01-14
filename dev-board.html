@@ -118,7 +118,9 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row" style="
     height: 38px;
     background-color: #1AD80D;">
-            <h3>AMONSOFT DEVELOPERS BOARD</h3> <p style="
+            <h3 style="
+    margin-top: 3%;
+">AMONSOFT DEVELOPERS BOARD</h3> <p style="
     float: right;
     margin-left: 30%;
     margin-top: 1%;
@@ -155,7 +157,7 @@
               <div class="mdl-card__supporting-text">
   <h4>Welcome to the Developers Board</h4>       
                   <div class="g-plus" data-action="share" data-href="http://amonsoft.github.io/dev-board.html"></div>
-<p>Give HTML a try and see what can be done. Try out buttons,input tags,images,hyperlink tags,header tags ,and all other html 5 tags and see what your creativity can help u build. We are constantly building onto this developer tool and hoping through it, more people can learn to develop web software and the possibilities are unimaginable. We shall be adding CSS and Javascript soon.</br></br> Thank You from the Amonsoft Developers Team.</p>
+<p>Give HTML a try and see what can be done. Try out buttons,input tags,images,hyperlink tags,header tags ,and all other html 5 tags and see what your creativity can help u build. We are constantly building onto this developer tool and hoping through it, more people can learn to develop web software and the possibilities are unimaginable.***Javascript and inline CSS now Operational***.</br></br> Thank You from the Amonsoft Developers Team.</p>
         
         <div id="content">
   <div id="win1">
@@ -165,7 +167,7 @@
         </div>
         
         <div id="win2">
-      <iframe id="answer" style="background:#D8D2D2; width: 100%;" ></iframe>
+      <iframe id="answer" src="JavaScript:" style="background:#D8D2D2; width: 100%;" ></iframe>
         </div>
             </div>
              
@@ -292,7 +294,8 @@
             var iframe = document.getElementById("answer");
             iframe.contentWindow.document.open();
             iframe.contentWindow.document.write(command );
-      
+            
+     // iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(command);
             
         }
     
