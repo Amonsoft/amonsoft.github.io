@@ -73,6 +73,26 @@
       
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+      <!--Facebook login Javascript SDk-->
+      <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '213109332366604',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+        <!--Facebook login Javascript SDk-->
+      
       
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
@@ -107,7 +127,17 @@
              <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp"  >
             <div class="mdl-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
-               <h4>Amonsoft LEARNING PROJECT 2016 </h4>           
+               <h4>Amonsoft LEARNING PROJECT 2016 </h4> 
+                  
+                  <!--FacebookShare buttons-->
+                  <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>         
+                  <!--FacebookShare buttons-->
+                  
               
   <p> The Amonsoft learning project kicks off, with some inspiration for our future students,old and young,boys and girls, everyone.Watch Bill Gates,Zurkerburg,Drew,Will-i-am and others inspire you from Code.org in 2013</p><a href="http://goo.gl/forms/qNKQbn9RkA">Join us now </a><p></p>
                
@@ -616,7 +646,7 @@ Amonsoft Corporation</br>
             </div>
             <ul class="mdl-mega-footer--link-list">
                 
-              <li><a href="#">Amonsoft Corpration</a></li>
+               <li><a href="index.html">Amonsoft Corpration</a></li>
               <li><a href="#">Help</a></li>
               <li><a href="#">Privacy and Terms</a></li>
             

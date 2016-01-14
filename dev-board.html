@@ -98,6 +98,16 @@
         </style>
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+      <!--facebook login -->
+      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=673163036078238";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+      
       
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--scroll ">
@@ -112,9 +122,9 @@
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect " style="
     background-color: #1AD80D;
 ">
-          <a class="mdl-layout__tab is-active">Developers Console</a>
-         <!--   <a href="#projects" class="mdl-layout__tab">Projects</a>
-          <a href="#blog" class="mdl-layout__tab">Blog</a>
+          <a  href="#overview" class="mdl-layout__tab is-active">Developers Console</a>
+            <a href="#login" class="mdl-layout__tab">Login</a>
+          <a  class="mdl-layout__tab">SignUp</a><!--
           <a href="#technology" class="mdl-layout__tab">Technology</a>
             <a href="#experiment" class="mdl-layout__tab">Experiments</a>
           <a href="#aboutus" class="mdl-layout__tab">About</a>
@@ -129,8 +139,8 @@
 
 
           
-          
-           <section class=" mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <div class="mdl-layout__tab-panel is-active" id="overview">
+           <section class=" mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" >
             <div class="mdl-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
           
@@ -152,18 +162,21 @@
             </div>
       
           </section>
-<!--
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" >
+    </div>
+
+    <div class="mdl-layout__tab-panel is-active" id="login">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
       
-          PRACTICE 
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                  <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
                   
               </div>
      </div>
       </section> 
 
-     -->
+    </div>
       
                   <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
@@ -215,7 +228,7 @@
             </div>
             <ul class="mdl-mega-footer--link-list">
                 
-              <li><a href="#">Amonsoft Corpration</a></li>
+              <li><a href="index.html">Amonsoft Corpration</a></li>
               <li><a href="#">Help</a></li>
               <li><a href="#">Privacy and Terms</a></li>
             
