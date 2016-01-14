@@ -211,7 +211,8 @@
            <section class=" mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" >
             <div class="mdl-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
-          
+                  <h5>Welcome Dear
+           </h5><p id="nameg">,</p>
 <p>Give HTML a try and see what can be done. Try out buttons,input tags,images,hyperlink tags,header tags ,and all other html 5 tags and see what your creativity can help u build. We are constantly building onto this developer tool and hoping through it, more people can learn to develop web software and the possibilities are unimaginable. We shall be adding CSS and Javascript soon.</br></br> Thank You from the Amonsoft Developers Team.</p>
         
         <div id="content">
@@ -308,7 +309,17 @@
         </footer>
       </main>
     </div>
-
+<script>
+if (auth2.isSignedIn.get()) {
+  var profile = auth2.currentUser.get().getBasicProfile();
+  console.log('ID: ' + profile.getId());
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+    
+}
+    document.getElementById("nameg").innerHTML = profile.getName();
+</script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     <!-- build:js(app/) ../../scripts/main.min.js -->
