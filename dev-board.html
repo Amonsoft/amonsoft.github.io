@@ -163,7 +163,11 @@
   <div id="win1">
           <textarea id="command" class="textarea" rows="20" cols="60">
 </textarea>
-      <button onclick="runx()">Run</button>
+      <button  onclick="runx()">Run</button>
+      <button id="create" style="
+    margin-left: 18%;
+" >Download Code File</button>
+      <a download="index.html" id="downloadlink" style="display: none">Download</a>
         </div>
         
         <div id="win2">
@@ -290,14 +294,57 @@
             command = document.getElementById("command").value 
             
             document.getElementById("answer").innerHTML; 
+         
               
             var iframe = document.getElementById("answer");
             iframe.contentWindow.document.open();
             iframe.contentWindow.document.write(command );
             
+             if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+            
      // iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(command);
             
+            if(command.lenght <10){
+                
+            }
+             
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/html'});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+  };
+
+
+  var create = document.getElementById('create'),
+    textbox = document.getElementById('textbox');
+
+  create.addEventListener('click', function () {
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(command);
+    document.getElementById("create").setAttribute("hidden","true");
+    link.style.display = 'block';
+  }, false);
+ 
+            var downlink = document.getElementById("downloadlink");
+            downlink.addEventListener('click',function (){
+                 document.getElementById("create").setAttribute("hidden","false");
+              },false);
+            
         }
+    
+
     
     </script>
 
