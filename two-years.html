@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Three.js App</title>
+    <style>
+      html, body { margin: 0; padding: 0; overflow: hidden; }
+        canvas{background-color: black;}
+    </style>
+  </head>
+  <body>
+      <canvas id="canvas"></canvas>
+      
+      
+    <script src="./scripts/www/cardboard/js/third-party/threejs/three.js"></script>
+    <script>
+      // Javascript will go here.
+     var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext('2d');
+        
+        canvas.width =window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        function loop(){
+            clear();
+            update();
+            draw();
+            queue();
+        }
+        
+        function clear(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+        }
+        
+        function queue(){
+            window.requestAnimationFrame(loop);
+        }
+        
+          var maxParticles = 200;
+            var emissionRate = 4;
+        function update(){
+            var particles =[];
+            var emmitters = [new Emitter(new Vector(100,230),Vector.fromAngle(0,2))];
+            
+            addNewParticle();
+            plotParticle(canvas.width,canvas.height);
+            
+          
+            
+           
+   
+        }
+         function addNewParticles(){
+                //stop emmiting if we reach max
+                if(particles.length > maxParticles)return;
+                
+                //for each emiiter
+                for(var i=0; i<emmitters.length;i++){
+                    //to emit a particle
+                    for(var j=0;j<emissionRate;j++){
+                        particles.push(emmitters[i].emitParticle());
+                    }
+                }
+            }
+        function plotParticles(boundsX,boundsY){
+                
+                //a new array to hold all particles
+                var currentParticles = [];
+                for(var i =0;i<particles.length;i++){
+                    var particle = particles[i];
+                    var pos = particle.position;
+                    
+                    //if out of bounds drop and move to next
+                    
+                    if(pos.x <0 || pos.x > boundsX ||pos.y < 0 || pos.y > boundsY) continue;
+                    //update velocities and acceleration tto account for the fields
+                    particle.submitToFields(fields);
+                    
+                    //move particle
+                    particle.move();
+                    
+                    //add this particle to list of current particles
+                    currentParticles.push(particle);
+                    
+                    //update our global particles for old particles to be created
+                    particles = currentParticles;
+                    
+                }
+            }
+        
+        var ParticleSize = 1;
+        function drawParticles(){
+            //set particel colour
+            ctx.fillStyle = 'rgb(0,0,255)';
+            
+            //for each particle
+            for(var i=0; i<particles.length;i++){
+                var position = particles[i].position;
+                // Draw a square at our position [particleSize] wide and tall
+    ctx.fillRect(position.x, position.y, particleSize, particleSize);
+            }
+           
+            
+        }
+         function drawCircle(object) {
+
+  ctx.fillStyle = object.drawColor;
+
+  ctx.beginPath();
+
+  ctx.arc(object.position.x, object.position.y, objectSize, 0, Math.PI * 2);
+
+  ctx.closePath();
+
+  ctx.fill();
+            }
+        
+        function Field(point, mass){
+            this.position = point;
+            this.setMass(mass);
+        }
+        
+        Field.prototype.setMass = function(mass){
+            this.mass = mass || 100;
+            this,drawColor = mass<0 ?"#f00":"#0f0";
+        }
+        
+        var fields = [new Field(new Vector(400,230),-140)];
+        
+        Particle.prototype.submitToFields = function (fields) {
+
+  // our starting acceleration this frame
+
+  var totalAccelerationX = 0;
+
+  var totalAccelerationY = 0;
+
+  // for each passed field
+
+  for (var i = 0; i < fields.length; i++) {
+
+    var field = fields[i];
+
+
+    var vectorX = field.position.x - this.position.x;
+
+    var vectorY = field.position.y - this.position.y;
+
+    // calculate the force via MAGIC and HIGH SCHOOL SCIENCE!
+
+    var force = field.mass / Math.pow(vectorX*vectorX+vectorY*vectorY,1.5);
+
+    // add to the total acceleration the force adjusted by distance
+
+    totalAccelerationX += vectorX * force;
+
+    totalAccelerationY += vectorY * force;
+
+  }
+
+  // update our particle's acceleration
+
+  this.acceleration = new Vector(totalAccelerationX, totalAccelerationY);
+
+};
+        
+        function draw(){
+            drawParticles();
+            fields.forEach(drawCirlce);
+            emitters.forEach(drawCircle);
+        }
+        loop();
+        
+        function Vector(x,y){
+            this.x = x || 0;
+            this.y = y || 0;
+        }
+        //adding another vector to another
+        Vector.prototype.add = function(vector){
+            this.x += vector.x;
+            this.y += vector.y;
+        }
+        
+        //getting the length of a vector
+        Vector.prototype.getMagnitude = function(){
+            return Math.sqrt(this.x * this.x +this.y *this.y);
+        }
+        
+        //getting the angele
+        Vector.prototype.getAngle = function(){
+            return Math.atan2(this.x,this.y);
+        }
+        
+        //get a new vector from the angle and magnitude
+        Vector.fromAngle = function(angle,mangnitude){
+            return new Vector(mangnitude * Math.cos(angle), mangnitude.Math.sin(angle));
+        }
+        //SENDING OUR PARTICEL TO ORIGIN 0,0
+        function Particle(point,velocity,acceleration){
+            this.position = point || new Vector(0,0);
+            this.velocity = velocity || new Vector(0,0);
+            this.acceleration = acceleration || new Vector(0,0);
+        }
+        
+        Particle.prototype.move = function () {
+  // Add our current acceleration to our current velocity
+  this.velocity.add(this.acceleration);
+  // Add our current velocity to our position
+  this.position.add(this.velocity);
+        };
+        
+        function Emitter(point,velocity,spread){
+            this.position = point;
+            this.velocity = velocity;
+            this.spread = spread ||Math.PI /32;
+            this.drawColor = "#999";
+        }
+        
+        Emitter.prototype.emitParticle = function(){
+            //we randomize the angle
+            var angle = this.velocity.getAngle() + this.spread - (Math.random()* this.spread *2);
+            
+            //The magnitude os the emmiter's velocity
+            var mangnitude = this.velocity.getMagnitude();
+            
+            //the emitters position
+            var position = new Vector(this.position.x,this.position.y);
+            
+            //new velocity based off of the calculated angle and magnitude
+            var velocity = Vector.fromAngle(angle,mangnitude);
+            
+            //return the new particle
+            return new Particle(position,velocity);
+            
+        }
+        
+        
+        
+    </script>
+  </body>
+</html>
