@@ -1,0 +1,110 @@
+<!Doctype html>
+<html>
+<head>
+    
+    </head>
+    <body>
+   <button id="btn" onclick="moveup()" >Up</button>
+    </body>
+       
+    <script>
+       var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+        document.body.appendChild(canvas);
+        canvas.width = 1000;
+        canvas.height = 500;
+        var counter = 0;
+        //************initiate objects********************
+        
+        //background                                   /**/
+        var bgImage = new Image();                     /**/
+        bgImage.src= "images/images/checkersx.jpg";    /**/
+        //characterone                                 /**/
+        var char1 = new Image();                       /**/
+        char1.src = "images/images/char1.png";         /**/
+        //charactertwo                                 /**/
+        var char2 = new Image();                       /**/
+        char2.src = "images/images/char2.png";         /**/
+     
+        //************************************************
+           //********Gice objects properties*******************
+            var char1prop = {
+                x:100,y:100,speed:200
+            };
+         var char2prop = {
+                x:0,y:0,speed:200
+            };
+        var widthx = 100;
+          var  heightx = 100;
+           //************************************************
+        //***********main game function********************
+        var main = function(){
+            
+            update();
+            move();
+            render();
+            requestAnimationFrame(main);
+        }
+        //**************************************************
+        
+        //******update fnuction to keep game runninng******
+        var update = function(){
+           // ++counter;
+            console.log("X: " + char1prop.x);
+            console.log("Y: " + char1prop.y);
+            
+        }
+         //**************************************************
+        function move(){
+      if(char1prop.x = 100 && char1prop.y === 100 ){
+            moveright();
+                }
+            
+   if(char1prop.x > 200  ){
+               movedown();
+    }
+            
+            if(char1prop.y > 199  ){
+               moveleft();
+           }
+            /*if(char1prop.x <= 0 ){
+               moveup();
+           }
+           /* if(char1prop.y == 100){
+              moveright();
+           } */
+            
+                   
+        }
+        
+        function movedown(){
+           console.log("movedown");
+            char1prop.y = ++heightx *0.56;
+        }
+         function moveup(){
+              console.log("moveup");
+             char1prop.y = --heightx *0.56;
+         }
+        function moveright(){
+             console.log("moveright");
+            
+            char1prop.x = ++widthx * 0.56;
+        }
+        function moveleft(){
+             console.log("moveleft");
+            char1prop.x = --widthx * 0.56;
+        }
+        
+        
+        //*****render function to draw images on screen*****
+        var render = function(){
+            ctx.drawImage(bgImage,0,0);
+            ctx.drawImage(char1,char1prop.x,char1prop.y);
+            ctx.drawImage(char2,20,3);
+        }
+         //**************************************************
+        
+        render();
+       main();
+        </script>
+</html>
