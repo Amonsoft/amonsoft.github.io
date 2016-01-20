@@ -2,14 +2,16 @@
 <html>
  <head>
     <meta charset="utf-8" />
+     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js"></script>
      <title>Game Development Workshop</title>
      <style>
          canvas{ background: #eee; display: block; margin: 0 auto;}
      </style>
 </head>
     
-<body>
-   <canvas id="myCanvas" width="1000" height="480"></canvas> 
+<body>Game
+   <canvas id="myCanvas" width="500" height="480"></canvas> 
     <script>
     //javascript
         var canvas = document.getElementById("myCanvas");
@@ -27,13 +29,13 @@
         
         //infromation on bricks
         var brickRowCount = 10;
-        var brickColumnCount = 10;
+        var brickColumnCount = 5;
         var c ;
         var r ;
         var brickWidth = 75;
         var brickHeight = 20;
         var brickPadding = 10;
-        var brickOffsetTop = 30;
+        var brickOffsetTop = 50;
         var brickOffsetLeft = 30;
         
         //scores
@@ -41,6 +43,10 @@
         
         //lives
         var lives = 3;
+        
+        //game Level
+        var Level = 1;
+        
        
        var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
@@ -68,6 +74,17 @@ for(c=0; c<brickColumnCount; c++) {
             ctx.fillText("Lives: "+lives,canvas.width-65,20);
         }
         
+        //game level
+        function gameLevel(){
+            
+            ctx.font="16px Arial";
+            ctx.fillStyle = "#0095DD";
+            ctx.fillText("Game Level:"+Level,90,20);
+            if(Level === 2){
+             ctx.fillText("Google is strange",90,40);
+            }
+            
+        }
         //scores function
         function drawscore(){
             ctx.font = "16px Arial";
@@ -95,6 +112,7 @@ for(c=0; c<brickColumnCount; c++) {
     }
 }
         
+        var old,newx;
         //collision dectect
         function collisionDetection() {
     for(c=0; c<brickColumnCount; c++) {
@@ -103,8 +121,17 @@ for(c=0; c<brickColumnCount; c++) {
             if(b.status == 1){
             if(x>b.x && x< b.x + brickWidth && y > b.y && y < b.y+ brickHeight){
                 dy = -dy;
+                 old = score;
                 b.status = 0;
                 score++;
+               
+                newx = score;
+                if(score%10 ===0 && score%5 === 0 && score != 1 && score != 0){
+                Level++;    
+                   
+            }
+                
+                
             }
             // calculations
         }
@@ -138,6 +165,7 @@ for(c=0; c<brickColumnCount; c++) {
          drawBall();
          drawPaddle();
          drawscore();
+         gameLevel()
          drawLives();
          collisionDetection();
         
@@ -187,7 +215,16 @@ for(c=0; c<brickColumnCount; c++) {
             paddleX -= 7;
         }
          
+      
+           
+             
+           
+          
+      
+         
      } 
+        
+        
         requestAnimationFrame(draw);
        
         setInterval(draw,10);
