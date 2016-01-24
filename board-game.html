@@ -81,7 +81,13 @@ for(c=0; c<brickColumnCount; c++) {
             ctx.fillStyle = "#0095DD";
             ctx.fillText("Game Level:"+Level,90,20);
             if(Level === 2){
-             ctx.fillText("Google is strange",90,40);
+             ctx.fillText("Amonsoft began with a selling smartphone business",90,40);
+            }
+            if(Level === 3){
+             ctx.fillText("Amonsoft was started inorder to start another company that died",90,40);
+            }
+            if(Level === 4){
+             ctx.fillText("Amonsoft is based on the Alphabet,Facebook and Amazon model",90,40);
             }
             
         }
@@ -92,6 +98,24 @@ for(c=0; c<brickColumnCount; c++) {
             ctx.fillText("Score :"+score,8,20)
         }
         
+            function drawBrick5() {
+    for(c=0; c<brickColumnCount; c++) {
+        for(r=0; r<5; r++) {
+            if(bricks[c][r].status == 1) {
+            var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+            var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+            bricks[c][r].x = brickX;
+            bricks[c][r].y = brickY;
+            ctx.beginPath();
+            ctx.rect(brickX, brickY, brickWidth, brickHeight);
+            ctx.fillStyle = "#055240";
+            ctx.fill();
+            ctx.closePath();
+        
+            }
+        }
+    }
+}
         
        function drawBricks() {
     for(c=0; c<brickColumnCount; c++) {
@@ -169,6 +193,80 @@ for(c=0; c<brickColumnCount; c++) {
          drawLives();
          collisionDetection();
         
+         
+        if(x + dx > canvas.width - ballRadius || x + dx < 0) {
+        dx = -dx;
+         }//from up to down
+         else if(y + dy > canvas.height-ballRadius) {
+    if(x > paddleX && x < paddleX + paddleWidth) {
+        dy = -dy;}
+         else{
+             //adding Game Over
+             lives--;
+             if(!lives){alert("GAME OVER");
+                        document.location.reload();
+                       }
+             
+         }
+         }
+         if(y + dy > canvas.height - ballRadius || y + dy < 0) {
+         dy = -dy;
+         } //from left to right
+         
+         x += dx;
+         y += dy;
+          document.addEventListener("keydown",keyDownHandler,false);
+        document.addEventListener("keyup",KeyUpHandler,false);
+        
+        ////code for the key controls
+        function keyDownHandler(e){
+            if(e.keyCode === 39){
+                rightPressed =true;
+            }else if(e.keyCode === 37){
+                leftPressed = true;
+            }
+        }//for key down
+        
+        function KeyUpHandler(e){
+            if(e.keyCode === 39){
+                rightPressed = false;
+            } else if(e.keyCode === 37){
+                leftPressed = false;
+            }
+        }//for key up
+        if(rightPressed && paddleX < canvas.width-paddleWidth){
+            paddleX += 7;
+        } else if(leftPressed && paddleX>0){
+            paddleX -= 7;
+        }
+         
+      
+           if(score === 50){
+               draw2();
+           }
+             
+           
+          
+      
+         
+     } 
+        
+         function draw2(){
+              //infromation on bricks
+       
+         ctx.clearRect(0,0,canvas.width,canvas.height);
+          drawBrick5();
+         drawBall();
+         drawPaddle();
+         drawscore();
+         gameLevel()
+         drawLives();
+         collisionDetection();
+        
+         if(score === 50){
+             alert("You Won");
+                        document.location.reload();
+         }
         if(x + dx > canvas.width - ballRadius || x + dx < 0) {
         dx = -dx;
          }//from up to down
