@@ -158,8 +158,9 @@
   <h4>Welcome to the Developers Board</h4>       
                   <div class="g-plus" data-action="share" data-href="http://amonsoft.github.io/dev-board.html"></div>
 <p>Give HTML a try and see what can be done. Try out buttons,input tags,images,hyperlink tags,header tags ,and all other html 5 tags and see what your creativity can help u build. We are constantly building onto this developer tool and hoping through it, more people can learn to develop web software and the possibilities are unimaginable.***Javascript and inline CSS now Operational***.</br></br> Thank You from the Amonsoft Developers Team.</p>
-        
+              </br><p>Rating :<h4 id="mark">10</h4></p> <a href="javascript:location.reload(true)"><button>Reset</button></a>
         <div id="content">
+           
   <div id="win1">
           <textarea id="command" class="textarea" rows="20" cols="60">
 </textarea>
@@ -168,6 +169,7 @@
     margin-left: 18%;
 " >Download Code File</button>
       <a download="index.html" id="downloadlink" style="display: none">Download</a>
+      
         </div>
         
         <div id="win2">
@@ -306,16 +308,22 @@
 
         function runx(){
             var command;
-            console.log("Got called")
+            //var stylex = "<style> p{color: red;}</style>";
+            console.log("Got called");
                console.log(document.getElementById("command").value);
-            command = document.getElementById("command").value 
+            command = document.getElementById("command").value ;
             
             document.getElementById("answer").innerHTML; 
          
-              
+               if(command.includes("main")){
+               
+
+            }
             var iframe = document.getElementById("answer");
             iframe.contentWindow.document.open();
             iframe.contentWindow.document.write(command );
+            
+            
             
              if (textFile !== null) {
       window.URL.revokeObjectURL(textFile);
@@ -324,9 +332,7 @@
             
      // iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(command);
             
-            if(command.lenght <10){
-                
-            }
+            
              
 var textFile = null,
   makeTextFile = function (text) {
@@ -359,6 +365,7 @@ var textFile = null,
                  document.getElementById("create").setAttribute("hidden","false");
               },false);
             
+           
         }
     
 
