@@ -1,10 +1,94 @@
 <!Doctype html>
 <html>
 <head>
-<title>Amonsoft</title>    
+   <title>AMonsoft</title> 
+    <script src="scripts/jquery-2.1.4.min.js" ></script>
 </head>
 <body>
-<h1>Amonsoft Experiment 6</h1>
+    <h3>Experiment 8 - Demonstrating Loops ,Start,Stop in javascript logic</h3>
+  <button id="start" >Start</button>
+    <button id="stop" >Stop</button>
+    <button id="clear" >Clear Screen</button>
     
+    <canvas id="canvas" style="width:100%"></canvas>
+   
+   
 </body>
+<script>
+ 
+       
+   
+    var canvas = document.getElementById("canvas");
+   
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var GrowDown ;
+    var stoploop = 0  ;
+    var GrowUp ;
+    GrowUp = 10;
+    var colorx = ["red","blue","grey","yellow","purple","green","black"];
+            
+            GrowDown = 10;
+    var ctx = canvas.getContext("2d");
+    var x=0 ; 
+     //plus diagram
+        function plus(){      
+    var plusX=  Math.random() *800;
+    var plusY =  Math.random() * 800;
+            
+    ctx.beginPath();
+    ctx.rect(plusX,plusY,GrowUp,GrowDown);
+    ctx.fillStyle = colorx[x];
+    ctx.fill();
+    ctx.closePath();
+    console.log(plusX);
+            //GrowUp--;
+            
+            //GrowDown--;
+            if(x>6){
+                x = 0;
+            } else{
+                x++;
+            }
+           
+           
+        }
+    //plus();
+ 
+     
+    
+    $( '#start' ).click( function() {
+        // ctx.clearRect(0,0,canvas.width,canvas.height);          
+     stoploop  = setInterval(plus,10);
+         
+     });
+      
+     $( '#stop' ).click( function() {
+        // ctx.clearRect(0,0,canvas.width,canvas.height);          
+    window.clearInterval(stoploop);
+         
+     });
+      $( '#clear' ).click( function() {
+         ctx.clearRect(0,0,canvas.width,canvas.height); 
+       // ctx.clearRect(0,0,canvas.wi,100);
+   // window.clearInterval(stoploop);
+         
+     });
+    
+      $( '#clear' ).click( function() {
+        /* ctx.clearRect(0,0,canvas.width,canvas.height); 
+          ctx.clearRect(100,100,100,100);
+     ctx.beginPath();
+    ctx.arc(100,100,100,0,Math.PI*2,true);
+    ctx.fillStyle = '#000';
+    ctx.fill();
+    ctx.closePath(); */
+         
+     });
+  
+             
+ 
+</script>
+
 </html>
