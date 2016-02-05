@@ -28,7 +28,7 @@ in your code, call the function after calling the script:-
 <script src=".../directory/sort.js"></script>
 </head>
 
-<body><body>
+<body></body>
 
 <script>
 var set = []; //name of the array or anyother data to sort

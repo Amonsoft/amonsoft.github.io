@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+<head>
+   <title>Amonsoft</title> 
+    <script src="scripts/jquery-2.1.4.min.js" ></script>
+<script src="canvasx.js"></script>
+</head>
+
+    <body> <h1>Experiment 9 showing Canvas Creation</h1>
+        </br><p>Created with 6 core java script lines Using Amonsoft canvasx.js Software</p>
+      <h5>canvasx.js will be made publically soon</h5>
+    <p></p>
+<button id="red"> Red Color</button>
+    <button id="blue"> Blue Color</button>
+    <button id="grey"> Grey Color</button>
+    <button id="green"> Green Color</button>
+        
+        </body>
+<script>
+ var canvas  = drawcanvas(500,300); //create canvas
+
+var context = canvas.getContext("2d");  //create context
+    
+//context filling to draw on canvas(shape determined by if radius is on)
+
+//declare Main game function forexample :- gamerun() in our case
+
+function gamerun(color){
+ drawObject(context,0,0,100,200,"blue"); //rectangle 
+ drawObject(context,150,100,null,null,color,40,0,Math.PI*2);  //circle ,since w = null & h = null
+ }
+ 
+ //start Game
+ //gamerun();
+ 
+ //you can choose to place game in Loop
+ setInterval(gamerun("green"),1000) ;  //1000 is the number of milliseconds per interval
+ 
+ //or in Modern Browsers use for the browser to keep making the frames as fast as possible
+ //requestAnimationFrame(gamerun);
+    
+    /* None Core Javascript*/ 
+    
+  $( '#red' ).click( function() {
+      gamerun("red");   
+     });
+    $( '#blue' ).click( function() {
+      gamerun("blue");   
+     });
+     $( '#grey' ).click( function() {
+      gamerun("grey");       
+     });
+     $( '#green' ).click( function() {
+      gamerun("green");   
+     });
+      /* None Core Javascript*/ 
+    
+</script>
+    </html>

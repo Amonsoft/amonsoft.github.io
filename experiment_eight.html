@@ -1,0 +1,77 @@
+<!Doctype html>
+<html>
+<head>
+   <title>AMonsoft</title> 
+    <script src="scripts/jquery-2.1.4.min.js" ></script>
+    <script src="gamex.js" ></script>
+</head>
+<body>
+    <h3>Experiment 8 - Demonstrating Loops ,Start,Stop in javascript logic</h3>
+  <button id="start" >Start</button>
+    <button id="stop" >Stop</button>
+    <button id="clear" >Clear Screen</button>
+    
+    
+   
+   
+</body>
+<script>
+ 
+    var canvas  = dcanvas(window.innerWidth,window.innerHeight); //create canvas
+     var ctx = canvas.getContext("2d");  //create context
+    
+    /*** variables ****/
+    var GrowDown ;
+    var stoploop = 0  ;
+    var GrowUp ;
+    GrowUp = 10;
+    var colorx = ["red","blue","grey","yellow","purple","green","black"];
+    GrowDown = 10;
+    var x=0 ; 
+     /*** variables ****/
+    
+    
+        //drawing function
+        function plus(){      
+        var plusX=  Math.random() *800;
+        var plusY =  Math.random() * 800;
+   
+         // drawObject(ctx,plusX,plusY,GrowUp,GrowDown,colorx[x]); 
+            drawObject(ctx,plusX,plusY,0,0,colorx[x],40,0,Math.PI*2);  //context filling to draw on canvas(shape determined by if radius is on)
+            
+
+            if(x>6){
+                x = 0;
+            } else{
+                x++;
+            }
+           
+           
+        }
+
+ 
+     
+    
+    $( '#start' ).click( function() {
+        // ctx.clearRect(0,0,canvas.width,canvas.height);          
+     stoploop  = setInterval(plus,10);
+         
+     });
+      
+     $( '#stop' ).click( function() {
+        // ctx.clearRect(0,0,canvas.width,canvas.height);          
+    window.clearInterval(stoploop);
+         
+     });
+      $( '#clear' ).click( function() {
+         ctx.clearRect(0,0,canvas.width,canvas.height); 
+       // ctx.clearRect(0,0,canvas.wi,100);
+   // window.clearInterval(stoploop);
+         
+     });
+
+             
+ 
+</script>
+
+</html>
