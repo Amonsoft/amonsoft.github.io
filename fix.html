@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>amos</title>
+    
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="scripts/jquery-2.1.4.min.js"></script>
+  </head>
+    
+  <body>
+  <form>
+<input name="data" id="data" />
+<input name="id_n" id="id_n" />
+</form>
+
+<button onclick="ajaxd()">Cick Me</button>
+<p id="post"></p>
+  </body>
+    
+    
+<script>
+    var datax = document.getElementById('data').value;
+    function ajaxd(){
+$.ajax({url: "app.php?data=Helloword", success: function(result){
+        $("#post").html(result);
+    }});
+        }
+</script>
+    
+</html>
+
+
+ 

@@ -3,7 +3,7 @@
 <head>
    <title>AMonsoft</title> 
     <script src="scripts/jquery-2.1.4.min.js" ></script>
-    <script src="gamex.js" ></script>
+    <script src="canvasx.js" ></script>
 </head>
 <body>
     <h3>Experiment 8 - Demonstrating Loops ,Start,Stop in javascript logic</h3>
@@ -17,7 +17,7 @@
 </body>
 <script>
  
-    var canvas  = dcanvas(window.innerWidth,window.innerHeight); //create canvas
+    var canvas  =  drawcanvas(window.innerWidth,window.innerHeight); //create canvas
      var ctx = canvas.getContext("2d");  //create context
     
     /*** variables ****/
@@ -36,8 +36,8 @@
         var plusX=  Math.random() *800;
         var plusY =  Math.random() * 800;
    
-         // drawObject(ctx,plusX,plusY,GrowUp,GrowDown,colorx[x]); 
-            drawObject(ctx,plusX,plusY,0,0,colorx[x],40,0,Math.PI*2);  //context filling to draw on canvas(shape determined by if radius is on)
+          drawObject(ctx,plusX,plusY,GrowUp,GrowDown,colorx[x]); 
+        drawObject(ctx,plusX,plusY,0,0,colorx[x],40,0,Math.PI*2);  //context filling to draw on canvas(shape determined by if radius is on)
             
 
             if(x>6){

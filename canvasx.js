@@ -31,7 +31,7 @@ in your code, call the function after calling the script:-
 
 ****************YOUR CODE********************************
 <head>
-<script src=".../directory/gamex.js"></script>
+<script src=".../directory/canvasx.js"></script>
 </head>
 
 <body></body>
